@@ -1,4 +1,12 @@
-<img width="948" alt="image" src="https://github.com/user-attachments/assets/a18546f8-ddf2-4c37-87cd-509ff641c458" />This project is completely replica of NLS panasonic. For this software requirement are:-
+*********************************************
+WELCOME TO NLS Panasonic Applcation
+*********************************************
+
+Overview:
+This is a replica of NLS pananasonic. This is for only informative purpose only.
+
+
+Software Requirement:-
 1. JAVA 17
 2. For fronted use VS code
 3. postgre SQL(pgadmin 17)
