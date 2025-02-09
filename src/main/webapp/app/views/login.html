@@ -1,0 +1,25 @@
+<div class="login-container">
+    <div class="login-header">
+        <h2>System Login</h2>
+        <hr class="separator">
+    </div>
+    <form ng-submit="login()">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="username" required>
+        </div>
+        <div class="form-group password-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="password" required>
+        </div>
+        <hr class="separator">
+        <div class="form-group buttons">
+            <button type="button" class="btn-forgot-password">Forgot Password</button>
+            <button type="submit" class="btn-login">Login</button>
+        </div>
+        <div class="form-group show-password">
+            <input type="checkbox" id="show-password" class="checkbox" ng-click="togglePasswordVisibility()">
+            <span>ShowPassword</span>
+        </div>
+    </form>
+</div>

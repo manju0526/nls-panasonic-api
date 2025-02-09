@@ -1,0 +1,7 @@
+{
+  "server": {
+    "baseDir": "./src/main/webapp"
+  },
+  "files": ["./src/main/webapp/**/*.{html,htm,css,js}"],
+  "ignore": ["./node_modules", "./src/main/webapp/some-directory-to-ignore"]
+}
