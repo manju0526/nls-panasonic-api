@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    width: 100%;
+    height: 13%;
+    background: white; /* White background for logos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-left, .logo-right {
+    height: 50px; /* Adjust as needed */
+}
+
+.divider {
+    width: 100%;
+    height: 2%;
+    background-color: darkblue;
+}
+
+.background {
+    width: 100%;
+    flex: 1;
+    background: url('../images/background.jpg') no-repeat left center;
+    background-size: cover; /* Make background image responsive */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: darkblue; /* Dark blue background for login form */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white; /* White text color */
+}
+
+
+.login-header {
+    margin-bottom: 20px;
+}
+
+.login-header h2 {
+    margin: 0;
+    color: white; /* White text color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white; /* White text color */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: white; /* White line separator */
+    margin: 20px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-login, .btn-forgot-password {
+    width: 48%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-login:hover, .btn-forgot-password:hover {
+    background-color: #0056b3;
+}
+
+.show-password {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start; /* Align to the left */
+    float: left;
+    margin-left: -5px;
+    margin-top: 10px;
+}
+
+.show-password .checkbox {
+    margin-right: 5px;
+}
+
+.show-password label {
+    color: white; /* White text color */
+    margin-left: 5px;
+}
+
+.footer {
+    width: 100%;
+    height: 5%;
+    background: white; /* White background for footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 100%;
+        padding: 10px;
+        position: static;
+        margin: 20px auto;
+    }
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 3%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-box-left {
+    flex: 1;
+}
+
+.info-box-logo {
+    max-width: 100px;
+}
+
+.info-box-middle {
+    flex: 2;
+    text-align: center;
+}
+
+.info-box-middle p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-box-middle h4 {
+    margin: 5px 0;
+}
+
+.info-box-middle a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-box-middle a:hover {
+    text-decoration: underline;
+}
+
+.info-box-right {
+    flex: 1;
+    text-align: right;
+}
+
+
+.btn-view-pdf:hover {
+    background-color: #0056b3;
+}
