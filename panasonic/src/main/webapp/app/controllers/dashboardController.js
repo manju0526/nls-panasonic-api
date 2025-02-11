@@ -11,6 +11,7 @@ angular.module('panasonicApp').controller('DashboardController', ['$scope', '$lo
 
     $scope.chgOrg = function(){
         alert("Changing Organization");
+        window.location.href = './changeOrganization.html';
     }
 
     $scope.logout = function() {

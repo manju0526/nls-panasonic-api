@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="panasonicApp">
+<head>
+    <link rel="stylesheet" href="../../assets/css/changeOrg.css">
+</head>
+<body ng-controller="ChangeOrgController">
+    <div class="header">
+        <div class="title">Change Organization</div>
+        <div class="action-buttons">
+            <button class="save-button" ng-click="saveChanges()">Save</button>
+            <button class="delete-button" ng-click="deleteEntry()">Delete</button>
+        </div>
+    </div>
+    
+    <div class="form-container">
+        <label>Organization:</label>
+        <select ng-model="selectedOrg" ng-options="org.name for org in organizations"></select>
+        
+        <label>Group:</label>
+        <select ng-model="selectedGroup" ng-options="group.name for group in groups"></select>
+        
+        <label>Status:</label>
+        <select ng-model="selectedStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="../../app/controllers/changeOrgController.js"></script>
+</body>
+</html>

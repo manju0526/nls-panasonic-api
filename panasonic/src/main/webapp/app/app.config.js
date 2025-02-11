@@ -9,16 +9,11 @@ angular.module('panasonicApp')
                 templateUrl: 'app/views/dashboard.html',
                 controller: 'DashboardController'
             })
+            .when('/changeOrg',{
+                templateUrl: 'app/views/changeOrganization.html',
+                controller: 'changeOrgController'
+            })
             .otherwise({
                 redirectTo: '/login'
-            });
-    }])
-    .run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
-        // ✅ Prevent direct access to dashboard without logging in
-        $rootScope.$on('$routeChangeStart', function(event, next) {
-            if (next.templateUrl === 'app/views/dashboard.html' && !UserService.isUserLoggedIn()) {
-                event.preventDefault();
-                $location.path('/login');
-            }
-        });
+            })
     }]);
