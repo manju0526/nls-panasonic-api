@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="panasonicApp">
+<head>
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+</head>
+<body ng-controller="DashboardController">
+    <div class="header">
+        <div class="user-info">
+            <div class="user-info-left">
+                <b class="nlsxuat">NLSXUAT</b>
+            </div>
+            <div class="user-info-middle">
+                <span>User: {{ username }}</span>  <!-- Displays the username -->
+                <span>Org: {{ orgName }}</span>   <!-- Displays the organization name -->
+            </div>
+            <div class="user-info-right">
+                <span>{{ currentDate | date:'fullDate' }}</span>
+                <button class="logout-button" ng-click="chgOrg()">Change Organization</button>&nbsp;&nbsp;
+                <button class="logout-button" ng-click="logout()">Logout</button>
+                <img src="../../assets/images/4SVisiLogTM.gif" alt="4SVisiLogTM">
+            </div>
+        </div>
+        <div class="toolbar">
+            <ul>
+                <li><a href="#/page1">Software Service</a></li>
+                <li><a href="#/page2">OMS</a></li>
+                <li><a href="#/page3">Finance</a></li>
+            </ul>
+        </div>
+    </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+   <script src="../../app/app.module.js"></script>  
+   <script src="../../app/app.config.js"></script> 
+   <script src="../../app/services/userService.js"></script>
+   <script src="../../app/controllers/dashboardController.js"></script>  
+</body>
+</html>
