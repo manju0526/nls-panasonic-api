@@ -1,0 +1,435 @@
+/*
+   Changed Date    Changed By      Changed For
+   ------------    ----------      -----------
+   18-08-2008      G R M K Reddy   NLS2007091 TCER 2(b)
+   21-06-2011      Anitha          For NLS2010013- Trade Compliance Alert CR
+   11-07-2011  Anitha           For LOV Change
+   18-08-2014    Anitha           For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR
+   19-05-2016      Nagma          NLS2015008_ARI Sequence No. and Payment Due Date CR
+   25-12-2016      Ramu           NLS2015015 - NLS BPO CR
+   12-03-2021      Ramu           300-148609,300-154447
+*/
+A
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    TEXT-DECORATION: none;
+}
+
+A:link      {color: #003399; }
+A:visited   {color: #003399; }
+A:active    {color: #003399; }
+A:hover     {color: #FF0000; }
+
+.COLHEAD
+{
+FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+COLOR: #000000;
+BACKGROUND-COLOR: #DEDFDE;
+text-align : right;
+}
+.FONTBOLD
+{
+FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+COLOR: #000000;
+BACKGROUND-COLOR: #DEDFDE;
+}
+
+.MANDATORY
+{
+FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+COLOR: RED;
+BACKGROUND-COLOR: #DEDFDE;
+text-align : right;
+}
+.ERROR
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: RED;
+    BACKGROUND-COLOR: #DEE7F7;
+}
+.ERRORBAR
+{
+    FONT-SIZE: 12px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: RED;
+}
+.SUCCESSBAR
+{
+    FONT-SIZE: 12px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: GREEN;
+}
+.SUCCESSMSG
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: GREEN;    
+    BACKGROUND-COLOR: #DEE7F7;
+}
+.SUCCES-BTN
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #4292C6;
+    TEXT-DECORATION: none;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #FFFFFF;    
+}
+.NAVIGATION-BTN
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    HEIGHT: 18px;
+    BACKGROUND-COLOR: #635194;
+    TEXT-DECORATION: none;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #FFFFFF;
+CURSOR:HAND;
+}
+
+
+.LISTHEAD
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #DEDFDE;    
+}
+
+.ACTION
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+    BACKGROUND-COLOR: #DEEBF7;
+}
+
+.ROW1
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #EFF3FF;    
+    HEIGHT: 20px; /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
+}
+.ROW2
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #FFFFFF;    
+    HEIGHT: 20px; /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
+}
+
+
+.TITLE
+{
+    FONT-SIZE: 14px;
+    FONT-FAMILY: tahoma,arial;
+    FONT-WEIGHT: bold;
+    COLOR: #FFFFFF;
+    BACKGROUND-COLOR: #639ACE;    
+}
+.SEARCHBAR
+{
+    FONT-SIZE: 14px;
+    FONT-FAMILY: tahoma,arial;
+    FONT-WEIGHT: bold;
+    COLOR: #FFFFFF;
+    BACKGROUND-COLOR: #63D35A;    
+}
+
+.SUBCOLHEAD
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: bold;
+    COLOR: #FFFFFF;
+    BACKGROUND-COLOR: #639ACE;  
+}
+
+
+.A
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #EFF3FF;
+    TEXT-DECORATION: none;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+.LOGOUT
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    HEIGHT: 15px;
+    BACKGROUND-COLOR: #EFF3FF;
+    TEXT-DECORATION: none;
+    FONT-SIZE: 10px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+
+.LABEL
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #DEE7F7;
+   
+}
+.B
+{
+    BORDER-RIGHT: #8d8d8d 1px solid;
+    BORDER-TOP: #8d8d8d 1px solid;
+    BORDER-LEFT: #8d8d8d 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 1px solid;
+    HEIGHT: 18px;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+.TEXTBOX
+{
+    BACKGROUND-COLOR: #f8f8fa;
+}
+
+.LOGOBAR
+{
+    BACKGROUND-COLOR: #4292C6;
+}
+.TABLEBORDER
+{
+BACKGROUND-COLOR:#e9f2f8;
+PADDING:1px;
+BORDER:solid 1px #4791C5;
+TOP:0px;
+LEFT:0px;
+WHITE-SPACE:normal; /*Modified by Ramu on 12-03-2021 For 300-148609,300-154447]*/
+}
+.MENUBORDER
+{
+BACKGROUND-COLOR:#B5D7F7;
+PADDING:1px;
+BORDER:solid 1px #4791C5;
+TOP:0px;
+LEFT:0px;
+WHITE-SPACE:nowrap;
+}
+
+.lov
+{
+    BORDER-RIGHT: #8d8d8d 1px solid;
+    BORDER-TOP: #8d8d8d 1px solid;
+    BORDER-LEFT: #8d8d8d 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 1px solid;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+.R
+{
+    BACKGROUND-COLOR:#EDEBEB;
+    BORDER-RIGHT: #8d8d8d 1px solid;
+    BORDER-TOP: #8d8d8d 1px solid;
+    BORDER-LEFT: #8d8d8d 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 1px solid;
+    HEIGHT: 18px;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: GREY;    
+}
+.RTEXTAREA
+{
+    BACKGROUND-COLOR:#EDEBEB;
+    BORDER-RIGHT: #8d8d8d 1px solid;
+    BORDER-TOP: #8d8d8d 1px solid;
+    BORDER-LEFT: #8d8d8d 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 1px solid;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: GREY;    
+}
+.FooterDefault
+{
+BACKGROUND-COLOR:MAROON;
+}
+.FooterSuccess
+{
+BACKGROUND-COLOR:GREEN;
+}
+.FooterError
+{
+BACKGROUND-COLOR:RED;
+}
+.READONLY
+{
+    BORDER-RIGHT: #8d8d8d 0px solid;
+    BORDER-TOP: #8d8d8d 0px solid;
+    BORDER-LEFT: #8d8d8d 0px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 0px solid;
+    HEIGHT: 18px;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;
+BACKGROUND-COLOR:#e9f2f8;
+}
+
+
+
+
+.RightCurve{
+Background-Attachment : scroll ;
+Background-Image : url(/NLS/images/FFFFFFr.gif) ;
+Background-Position : right top ;
+Background-Repeat : no-repeat ;
+}
+.LeftSubTabid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #336699 ;
+Background-Image : url(/NLS/images/FFFFFFsl.gif) ;
+Background-Position : left top ;
+Background-Repeat : no-repeat ;
+}
+.LeftTabBgSlantid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #CCCC99 ;
+Background-Image : url(/NLS/images/FFFFFFtl.gif) ;
+Background-Position : left top ;
+Background-Repeat : no-repeat ;
+}
+.LeftTabForeSlantid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #336699 ;
+Background-Image : url(/NLS/images/FFFFFFtl.gif) ;
+Background-Position : left top ;
+Background-Repeat : no-repeat ;
+}
+.RightSubTabid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #336699 ;
+Background-Image : url(/NLS/images/FFFFFFsr.gif) ;
+Background-Position : right top ;
+}
+.RightTabBgCurveid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #CCCC99 ;
+Background-Image : url(/NLS/images/FFFFFFtr.gif) ;
+Background-Position : right top ;
+Background-Repeat : no-repeat ;
+}
+.RightTabForeCurveid704112siteid0{
+Background-Attachment : scroll ;
+Background-Color : #336699 ;
+Background-Image : url(/NLS/images/FFFFFFtr.gif) ;
+Background-Position : right top ;
+Background-Repeat : no-repeat ;
+}
+.SubTabBgTextid704112siteid0{
+Color : #CCCC99 ;
+Text-Decoration : none ;
+Font-Family : Arial, Helvetica ;
+Font-Size : 8pt ;
+Font-Weight : Bold ;
+}
+.TabBackgroundColorid704112siteid0{
+Background-Color : #CCCC99 ;
+}
+.TabBackgroundTextid704112siteid0{
+Color : #003366 ;
+Text-Decoration : none ;
+Font-Family : Arial, Helvetica ;
+Font-Size : 8pt ;
+}
+.TabForegroundColorid704112siteid0{
+Background-Color : #336699 ;
+}
+.TabForegroundTextid704112siteid0{
+Color : #FFFFFF ;
+Font-Family : Arial, Helvetica ;
+Font-Size : 8pt ;
+Font-Weight : Bold ;
+}
+/* [Added by G R M K Reddy on 18-08-2008 For NLS2007091 TCER 2(b) starts] */
+.LABEL-DISABLED
+{
+FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+COLOR: GRAY;
+BACKGROUND-COLOR: #DEDFDE;
+text-align : right;
+}
+/* [Added by G R M K Reddy on 18-08-2008 For NLS2007091 TCER 2(b) ends] */
+/* Added By Anitha on 21-06-2011 For NLS2010013- Trade Compliance Alert CR Starts*/
+.TEXTAREA
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+/* Added By Anitha on 21-06-2011 For NLS2010013- Trade Compliance Alert CR Ends*/
+/*Added By Anitha on 11-07-11 For LOV Change Starts*/
+.select
+{
+    BORDER-RIGHT: #8d8d8d 1px solid;
+    BORDER-TOP: #8d8d8d 1px solid;
+    BORDER-LEFT: #8d8d8d 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: #8d8d8d 1px solid;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma,arial;
+    COLOR: #000000;    
+}
+/*Added By Anitha on 11-07-11 For LOV Change Ends*/
+/*[Added By Nagma on 12-05-2016 For NLS2015008-ARI Sequence No. and Payment Due Date CR Starts]*/
+.COLTEXT
+{
+    FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+BACKGROUND-COLOR: #DEE7F7;
+text-align : left;
+}
+/*[Added By Nagma on 12-05-2016 For NLS2015008-ARI Sequence No. and Payment Due Date CR Ends]*/
+
+
+/*[Added By Ramu on 25-12-2016 For NLS2015015 - NLS BPO CR Starts]*/
+.COLHEAD1
+{
+FONT-SIZE: 11px;
+FONT-FAMILY: tahoma,arial;
+FONT-WEIGHT: bold;
+COLOR: #000000;
+BACKGROUND-COLOR: #DEDFDE;
+text-align : left;
+}
+
+/*[Added By Ramu on 25-12-2016 For NLS2015015 - NLS BPO CR Ends]*/
