@@ -3,18 +3,24 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw; /* ✅ Ensures the full screen width is used */
-    overflow-x: hidden; /* ✅ Prevents horizontal scrolling */
+    width: 100vw; /* Ensures the full screen width is used */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
     background-color: white; /* White background color */
 }
 
+/* Header Section */
 .user-info {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* ✅ Distributes elements correctly */
+    justify-content: space-between; /* Distributes elements correctly */
     background-color: #4292C6; /* Light blue background color */
-    padding: 5px 10px; /* ✅ Better spacing */
-    flex-wrap: wrap; /* ✅ Prevents elements from overflowing */
+    padding: 5px 10px;
+    flex-wrap: wrap; /* Prevents elements from overflowing */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's above other elements */
 }
 
 .user-info-left {
@@ -26,20 +32,20 @@ body {
 .user-info-middle {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex: 1; /* ✅ Expands to take available space */
+    justify-content: center;  
+    transform: translateX(50%);
 }
 
 .user-info-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* ✅ Corrected flex property */
+    justify-content: flex-end;
     margin-right: 10px;
-    flex-wrap: wrap; /* ✅ Prevents text from overflowing */
+    flex-wrap: wrap; /* Prevents text from overflowing */
 }
 
 .user-info span {
-    margin-right: 10px; /* ✅ Ensures spacing */
+    margin-right: 10px;
     font-size: 12px;
     color: #fffdfd;
 }
@@ -54,17 +60,28 @@ body {
     background-color: #ffffff;
     color: #4292C6;
     border: 1px solid rgb(0, 0, 0);
-    padding: 3px 6px; /* ✅ Slightly adjusted padding */
+    padding: 3px 6px;
     font-size: 12px;
     cursor: pointer;
 }
 
+.user-info img {
+    margin-left: 10px;
+    height: 30px;
+}
+
+/* Toolbar Section */
 .toolbar {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: #b0d9f8;
     padding: 5px 10px;
+    position: fixed;
+    top: 35px; /* Below the header */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Keeps it above content */
 }
 
 .toolbar ul {
@@ -88,12 +105,16 @@ body {
     color: #003366;
 }
 
-.main-content {
-    padding: 20px;
-    margin-top: 70px;
+/* Main Content Section */
+.content-wrapper {
+    margin-top: 100px; /* Space below the toolbar */
+    width: 80%; /* Adjust width as needed */
+    max-width: 1000px; /* Optional: Set a max width */
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100vh - 100px); /* Adjust height dynamically */
+    background-color: white;
+    padding: 20px; /* Optional: Add padding */
+
 }
 
-.user-info img {
-    margin-left: 10px;
-    height: 30px;
-}

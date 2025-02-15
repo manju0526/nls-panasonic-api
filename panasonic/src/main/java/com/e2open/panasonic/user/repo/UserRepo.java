@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.e2open.panasonic.user.model.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepo extends JpaRepository<User, Long> {
 
     User findByUsernameAndPassword(String username, String password);
     

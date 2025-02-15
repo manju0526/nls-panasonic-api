@@ -1,33 +1,43 @@
-<!DOCTYPE html>
-<html ng-app="panasonicApp">
 <head>
-    <link rel="stylesheet" href="../../assets/css/changeOrg.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/styleAll.css">
 </head>
+
 <body ng-controller="ChangeOrgController">
-    <div class="header">
+    <div class="header TITLE">
         <div class="title">Change Organization</div>
-        <div class="action-buttons">
-            <button class="save-button" ng-click="saveChanges()">Save</button>
-            <button class="delete-button" ng-click="deleteEntry()">Delete</button>
-        </div>
     </div>
-    
-    <div class="form-container">
-        <label>Organization:</label>
-        <select ng-model="selectedOrg" ng-options="org.name for org in organizations"></select>
-        
-        <label>Group:</label>
-        <select ng-model="selectedGroup" ng-options="group.name for group in groups"></select>
-        
-        <label>Status:</label>
-        <select ng-model="selectedStatus">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-        </select>
+
+    <div class="TABLEBORDER">
+        <div style="margin-left:300px ; " >
+            <label class="MANDATORY">Organization:</label>&nbsp;&nbsp;
+            <select style="width: 25%;" class="TEXTBOX" ng-model="selectedOrg"
+                ng-options="org.name for org in organizations">
+            </select><br>
+
+            <label class="MANDATORY">Group:</label>&nbsp;&nbsp;
+            <select style="width: 25%; margin-left: 38px;" class="TEXTBOX" ng-model="selectedGroup"
+                ng-options="group.name for group in groups">
+            </select><br>
+
+            <label class="MANDATORY">Status:</label>&nbsp;&nbsp;
+            <select style="width: 25%; margin-left: 36px;" class="TEXTBOX" ng-model="selectedStatus" ng-init="selectedStatus='Active'">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+
+            
+        </div>
+        <div class="action-buttons" style="margin-left: 400px; text-decoration: none; column-span: 2;">
+            <button class="NAVIGATION-BTN" ng-click="saveChanges()">Save</button>&nbsp;&nbsp;
+            <button class="NAVIGATION-BTN" ng-click="Cancel()">Cancel</button>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <script src="../../app/controllers/changeOrgController.js"></script>
+    <script src="../../app/controllers/dashboardController.js"></script>
+    
 </body>
+
 </html>

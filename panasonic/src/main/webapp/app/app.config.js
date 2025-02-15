@@ -9,11 +9,14 @@ angular.module('panasonicApp')
                 templateUrl: 'app/views/dashboard.html',
                 controller: 'DashboardController'
             })
-            .when('/changeOrg',{
-                templateUrl: 'app/views/changeOrganization.html',
-                controller: 'changeOrgController'
+            .when('/changeOrg', {
+                templateUrl: '/app/views/changeOrganization.html',
+                controller: 'ChangeOrgController'
+            })
+            .when('/empty', {
+                templateUrl: '/app/views/empty.html'
             })
             .otherwise({
                 redirectTo: '/login'
-            })
+            });
     }]);
