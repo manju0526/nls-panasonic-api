@@ -6,12 +6,15 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e2open.panasonic.dto.OrganizationRequest;
+import com.e2open.panasonic.user.model.Organization;
 import com.e2open.panasonic.user.model.User;
 import com.e2open.panasonic.user.service.OrganizationService;
 import com.e2open.panasonic.user.service.UserService;
@@ -52,6 +55,17 @@ public class MainController {
 			return ResponseEntity.ok(response);
 		}
 
+	}
+	
+	
+	@GetMapping("/organization/{username}")
+	public ResponseEntity<?> getOrganizationBYId(@PathVariable String username){
+		Organization org = organizationService.getOrganizationByUser(username);
+		if(org ==null) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Organization not found for user");
+		}
+		
+		return ResponseEntity.ok(org);
 	}
 
 }
