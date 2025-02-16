@@ -46,4 +46,7 @@ public class OrganizationService {
 		}
 	}
 
+	public Organization getOrganizationByUser(String userName) {
+		return organizationRepo.findByCreatedAt(userName).orElse(null);
+	}
 }

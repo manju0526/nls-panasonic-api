@@ -1,29 +1,60 @@
-angular.module('panasonicApp').controller('DashboardController', ['$scope', '$location', 'UserService', 
-    function($scope, $location, UserService) {
+angular.module('panasonicApp').controller('DashboardController', ['$scope', '$location', '$http', 'UserService',
+    function ($scope, $location, $http, UserService) {
         $scope.username = UserService.getUsername();
-        $scope.orgName = UserService.getOrgName();
-        $scope.group = UserService.getGroup();
+        $scope.orgName = "";
+        $scope.group = "";
         $scope.dc = 'NA';
         $scope.currentDate = new Date();
 
-       // ✅ Redirect to login if user is not authenticated
-       if (!$scope.username) {
-        window.location.href = '/login';  // ✅ Redirects to main login page
-    }
+        // ✅ Redirect to login if user is not authenticated
+        if (!$scope.username) {
+            window.location.href = '/login';  
+        }
 
-    $scope.$on('orgChanges',function(event,data){
-        $scope.orgName = data.orgId;
-        $scope.group = data.orggpId;
-    })
+        // ✅ Fetch Organization Details from API on Login
+        function fetchOrganizationDetails() {
+            $http.get('http://localhost:8888/api/organization/' + $scope.username)
+                .then(function (response) {
+                    console.log("API Response:", response.data);
 
-    $scope.chgOrg = function(){
+                    if (response.data) {
+                        $scope.orgName = response.data.orgId || "";
+                        $scope.group = response.data.orgppId || ""; // Ensure correct key
 
-        $location.path('/changeOrg')
-    }
+                        // ✅ Update UserService with API data
+                        UserService.setOrgName($scope.orgName);
+                        UserService.setGroup($scope.group);
+                    }
+                })
+                .catch(function (error) {
+                    console.error("Error fetching organization details:", error);
+                });
+        }
 
-    $scope.logout = function() {
-        sessionStorage.clear();
-        window.location.href = '/login';  // ✅ Redirects to login on logout
-    };
+        // ✅ Load organization details when dashboard loads
+        fetchOrganizationDetails();
+
+        // ✅ Listen for Organization Changes from ChangeOrgController
+        $scope.$on('orgChanges', function (event, data) {
+            console.log("Updating dashboard with new organization data:", data);
+
+            $scope.orgName = data.orgId;
+            $scope.group = data.orgppId; 
+
+            // ✅ Update UserService to persist changes
+            UserService.setOrgName(data.orgId);
+            UserService.setGroup(data.orgppId);
+        });
+
+        // ✅ Redirect to Change Organization Page
+        $scope.chgOrg = function () {
+            $location.path('/changeOrg');
+        };
+
+        // ✅ Logout Function
+        $scope.logout = function () {
+            sessionStorage.clear();
+            window.location.href = '/login';
+        };
     }
 ]);

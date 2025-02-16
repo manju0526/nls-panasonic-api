@@ -1,0 +1,6 @@
+*******************************************
+       Welcome to NLS application
+-------------------------------------------
+Java Version: $(java.version)
+Spring Boot Version: ${spring-boot.version}
+*******************************************
