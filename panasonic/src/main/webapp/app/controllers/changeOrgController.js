@@ -92,6 +92,7 @@ angular.module('panasonicApp').controller('ChangeOrgController', function ($scop
 
     // Cancel Changes
     $scope.Cancel = function () {
+        sessionStorage.clear();
         $location.path('/empty');
     };
 });
