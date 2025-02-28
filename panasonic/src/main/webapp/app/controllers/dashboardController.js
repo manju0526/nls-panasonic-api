@@ -1,5 +1,5 @@
-angular.module('panasonicApp').controller('DashboardController', ['$scope', '$location', '$http', 'UserService',
-    function ($scope, $location, $http, UserService) {
+angular.module('panasonicApp').controller('DashboardController', ['$scope', '$location', '$http', 'UserService', 'AuthService',
+    function ($scope, $location, $http, UserService, AuthService) {
         $scope.username = UserService.getUsername();
         $scope.orgName = "";
         $scope.group = "";
@@ -7,8 +7,9 @@ angular.module('panasonicApp').controller('DashboardController', ['$scope', '$lo
         $scope.currentDate = new Date();
 
         // ✅ Redirect to login if user is not authenticated
-        if (!$scope.username) {
+        if (!$scope.username || !localStorage.getItem('token')) {
             window.location.href = '/login';  
+            return;
         }
 
         // ✅ Fetch Organization Details from API on Login
@@ -54,6 +55,7 @@ angular.module('panasonicApp').controller('DashboardController', ['$scope', '$lo
         // ✅ Logout Function
         $scope.logout = function () {
             sessionStorage.clear();
+            AuthService.logout(); // ✅ Clear token on logout
             window.location.href = '/login';
         };
     }

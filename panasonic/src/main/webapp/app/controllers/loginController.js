@@ -1,5 +1,5 @@
-angular.module('panasonicApp').controller('LoginController', ['$scope', 'AuthService', 'UserService',
-    function ($scope, AuthService, UserService) {
+angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 'AuthService', 'UserService',
+    function ($scope, $http,AuthService, UserService) {
         $scope.user = { username: '', password: '' };
         $scope.errorMessage = '';
 
@@ -12,6 +12,8 @@ angular.module('panasonicApp').controller('LoginController', ['$scope', 'AuthSer
                     UserService.setOrgName(response.orgName || 'PLGA');
                     UserService.setGroup(response.group || 'BL');
 
+                    localStorage.setItem('token', response.token); // ✅ Store token in local storage
+
                     console.log('Login successful' + UserService.getGroup());
 
                     window.location.href = 'app/views/dashboard.html'; // ✅ Redirect
@@ -22,5 +24,33 @@ angular.module('panasonicApp').controller('LoginController', ['$scope', 'AuthSer
                 $scope.errorMessage = error.message || "Login failed.";
             });
         };
+
+
+        $scope.PasswordShow = function () {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        };
+
+        $scope.forgotPassword = function () {
+            
+            $http.post('http://localhost:8888/api/forgotPassword', { username: $scope.user.username })
+            .then(function (response) {
+                $scope.successMessage = "Password reset link sent to your registered email.";
+                alert($scope.successMessage);
+            })
+            .catch(function (error) {
+                $scope.errorMessage = error.data || "Please provide a valid username to Re-set password.";
+                alert($scope.errorMessage);
+            });
+        
+        
+        
+        };
+
     }
+
 ]);
