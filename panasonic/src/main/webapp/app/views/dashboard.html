@@ -3,6 +3,14 @@
 
 <head>
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="../../app/app.module.js"></script>
+    <script src="../../app/app.config.js"></script>
+    <script src="../../app/services/userService.js"></script>
+    <script src="../../app/services/authService.js"></script>
+    <script src="../../app/controllers/dashboardController.js"></script>
+    <script src="../../app/controllers/changeOrgController.js"></script>
 </head>
 
 <body ng-controller="DashboardController">
@@ -36,14 +44,14 @@
         <div ng-view></div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <script src="../../app/app.module.js"></script>
-    <script src="../../app/app.config.js"></script>
-    <script src="../../app/services/userService.js"></script>
-    <script src="../../app/services/authService.js"></script>
-    <script src="../../app/controllers/dashboardController.js"></script>
-    <script src="../../app/controllers/changeOrgController.js"></script>
+    <div class="footer" ng-style="{'background-color': footerColor}">
+        <div class="footer-left">
+            <img ng-if="footerIcon" src="./../../assets/images/footer-icon.png" class="footer-icon" ng-click="showFooterAlert()" />
+            <span class="footer-text">{{ footerMessage }}</span>
+        </div>
+        <p class="footer-copyright">&copy; 2025 Panasonic. All rights reserved.</p>
+    </div>   
+
 </body>
 
 </html>

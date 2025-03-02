@@ -72,7 +72,7 @@ angular.module('panasonicApp').controller('ChangeOrgController', function ($scop
             headers: { 'Content-Type': 'application/json' }
         })
         .then(function (response) {
-            alert(response.data.message);
+            
 
             // ✅ Update UserService with new values
             UserService.setOrgName(requestData.orgId);
@@ -83,9 +83,13 @@ angular.module('panasonicApp').controller('ChangeOrgController', function ($scop
 
             // ✅ Redirect user after update
             $location.path('/dashboard');
+
+            $rootScope.updateFooter(response.data.message, "green");
+            alert(response.data.message);
         })
         .catch(function (error) {
             alert("Failed to save changes");
+            $rootScope.updateFooter(response.data.message, "red");
             console.error(error);
         });
     };
