@@ -1,14 +1,3 @@
-/*
-   Changed Date    Changed By      Changed For
-   ------------    ----------      -----------
-   18-08-2008      G R M K Reddy   NLS2007091 TCER 2(b)
-   21-06-2011      Anitha          For NLS2010013- Trade Compliance Alert CR
-   11-07-2011  Anitha           For LOV Change
-   18-08-2014    Anitha           For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR
-   19-05-2016      Nagma          NLS2015008_ARI Sequence No. and Payment Due Date CR
-   25-12-2016      Ramu           NLS2015015 - NLS BPO CR
-   12-03-2021      Ramu           300-148609,300-154447
-*/
 A
 {
     FONT-SIZE: 11px;
@@ -433,3 +422,4 @@ text-align : left;
 }
 
 /*[Added By Ramu on 25-12-2016 For NLS2015015 - NLS BPO CR Ends]*/
+
