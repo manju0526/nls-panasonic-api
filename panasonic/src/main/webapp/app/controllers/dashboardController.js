@@ -1,12 +1,54 @@
 angular.module('panasonicApp').controller('DashboardController', [
     '$scope', '$rootScope', '$location', '$timeout', '$http', 'UserService', 'AuthService',
     function ($scope, $rootScope, $location, $timeout, $http, UserService, AuthService) {
-        
+        console.log("ChangeOrgController loaded");
         $scope.username = UserService.getUsername();
         $scope.orgName = "";
         $scope.group = "";
         $scope.dc = 'NA';
         $scope.currentDate = new Date();
+        $rootScope.currentView = '';
+
+        $scope.menus = [
+            {
+                name: "EVA Server", link: "#/eva", submenu: [
+                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Reports", link: "#/webtop/reports" },
+                    { name: "Settings", link: "#/webtop/settings" }
+                ]
+            },
+            {
+                name: "OMS", link: "#/oms", submenu: [
+                    { name: "Sales Order", link: "#/webtop/dashboard" },
+                    { name: "Purchase order", link: "#/webtop/reports" },
+                    { name: "Packing List", link: "#/webtop/settings" }
+                ]
+            },
+            {
+                name: "Shipment", link: "#/shipment", submenu: [
+                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Reports", link: "#/webtop/reports" },
+                    { name: "Settings", link: "#/webtop/settings" }
+                ]
+            },
+            {
+                name: "Finance", link: "#/finance", submenu: [
+                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Reports", link: "#/webtop/reports" },
+                    { name: "Settings", link: "#/webtop/settings" }
+                ]
+            },
+            {
+                name: "WebTop",
+                link: "#/webtop",
+                submenu: [
+                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Change Organization", link : "/app/views/changeOrganization.html"   },
+                    { name: "Settings", link: "#/webtop/settings" }
+                ]
+            }
+        ];
+
 
         // ✅ Default footer values
         function resetFooter() {
@@ -60,7 +102,10 @@ angular.module('panasonicApp').controller('DashboardController', [
 
         // ✅ Navigation Functions
         $scope.chgOrg = function () {
-            $location.path('/changeOrg');
+            //$location.path('/changeOrg');
+            $rootScope.currentView = '/app/views/changeOrganization.html';
+         // $location.path('/changeOrg');
+
         };
 
         $scope.logout = function () {
@@ -81,6 +126,10 @@ angular.module('panasonicApp').controller('DashboardController', [
         // ✅ Footer Message Alert
         $scope.showFooterAlert = function () {
             alert($rootScope.footerMessage);
+        };
+
+        $scope.navigate = function (link) {
+            $rootScope.currentView = link;
         };
     }
 ]);

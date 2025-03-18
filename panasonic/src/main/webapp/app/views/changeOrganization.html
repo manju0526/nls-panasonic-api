@@ -6,7 +6,8 @@
     <script src="../../app/controllers/dashboardController.js"></script>
 </head>
 
-<body ng-controller="ChangeOrgController">
+<div ng-controller="ChangeOrgController">
+
     <div class="header TITLE">
         <div class="title">Change Organization</div>
     </div>
@@ -20,7 +21,8 @@
 
             <label class="MANDATORY">Group:</label>&nbsp;&nbsp;
             <select style="width: 25%; margin-left: 38px;" class="TEXTBOX" ng-model="selectedGroup"
-                ng-options="group.name for group in groups" >
+            ng-options="group as group.name for group in groups"
+            >
             </select><br>
 
             <label class="MANDATORY">Status:</label>&nbsp;&nbsp;
@@ -38,6 +40,6 @@
     </div>
 
     
-</body>
+</div>
 
 </html>
