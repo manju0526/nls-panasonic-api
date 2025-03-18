@@ -1,5 +1,5 @@
 angular.module('panasonicApp')
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
         $routeProvider
             .when('/login', {
                 templateUrl: 'app/views/login.html',
@@ -19,4 +19,9 @@ angular.module('panasonicApp')
             .otherwise({
                 redirectTo: '/login'
             });
+
+            $locationProvider.hashPrefix('');
+
+    
+            
     }]);

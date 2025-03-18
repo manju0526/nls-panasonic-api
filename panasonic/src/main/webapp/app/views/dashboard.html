@@ -11,9 +11,11 @@
     <script src="../../app/services/authService.js"></script>
     <script src="../../app/controllers/dashboardController.js"></script>
     <script src="../../app/controllers/changeOrgController.js"></script>
+    <script src="../../app/directives/cacheBusterDirective.js"></script>
 </head>
 
 <body ng-controller="DashboardController">
+   
     <div class="header">
         <div class="user-info">
             <div class="user-info-left">
@@ -33,14 +35,44 @@
             </div>
         </div>
         <div class="toolbar">
-            <ul>
-                <li><a href="#/page1">Software Service</a></li>
-                <li><a href="#/page2">OMS</a></li>
-                <li><a href="#/page3">Finance</a></li>
+            <ul class="menu">
+                <li ng-repeat="menu in menus" class="dropdown"
+                    ng-mouseenter="menu.showDropdown = true"
+                    ng-mouseleave="menu.showDropdown = false">
+                    
+                    <span class="menu-item" ng-click="navigate(menu.link)">
+                        {{ menu.name }} <span ng-if="menu.submenu" class="arrow">&#9662;</span>
+                    </span>
+        
+                    <!-- First Level Dropdown -->
+                    <ul class="dropdown-menu" ng-show="menu.showDropdown">
+                        <li ng-repeat="sub in menu.submenu" class="dropdown"
+                            ng-mouseenter="sub.showDropdown = true"
+                            ng-mouseleave="sub.showDropdown = false">
+                            
+                            <span class="submenu-item" ng-click="navigate(sub.link)">
+                                {{ sub.name }} <span ng-if="sub.children" class="arrow">&#9656;</span>
+                            </span>
+        
+                            <!-- Second Level Dropdown -->
+                            <ul class="dropdown-menu sub-menu" ng-show="sub.showDropdown">
+                                <li ng-repeat="child in sub.children">
+                                    <span class="submenu-item" ng-click="navigate(child.link)">
+                                        {{ child.name }}
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
+        
+        
+        
     </div>
     <div class="content-wrapper">
+        <div ng-if="currentView" ng-include="currentView"></div>
         <div ng-view></div>
     </div>
 
@@ -49,7 +81,7 @@
             <img ng-if="footerIcon" src="./../../assets/images/footer-icon.png" class="footer-icon" ng-click="showFooterAlert()" />
             <span class="footer-text">{{ footerMessage }}</span>
         </div>
-        <p class="footer-copyright">&copy; 2025 Panasonic. All rights reserved.</p>
+        <p class="footer-copyright">&copy; Copyright © 2004, Four Soft Singapore.All rights reserved.</p>
     </div>   
 
 </body>
