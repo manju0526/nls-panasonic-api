@@ -44,7 +44,7 @@ angular.module('panasonicApp').controller('DashboardController', [
                 submenu: [
                     { name: "Dashboard", link: "#/webtop/dashboard" },
                     { name: "Change Organization", link : "/app/views/changeOrganization.html"   },
-                    { name: "Settings", link: "#/webtop/settings" }
+                    { name: "Settings", link: "/app/views/EditToolbar.html" }
                 ]
             }
         ];

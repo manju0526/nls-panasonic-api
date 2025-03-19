@@ -11,7 +11,7 @@
     <script src="../../app/services/authService.js"></script>
     <script src="../../app/controllers/dashboardController.js"></script>
     <script src="../../app/controllers/changeOrgController.js"></script>
-    <script src="../../app/directives/cacheBusterDirective.js"></script>
+    <script src="../../app/controllers/editToolbarController.js"></script>
 </head>
 
 <body ng-controller="DashboardController">
@@ -73,7 +73,6 @@
     </div>
     <div class="content-wrapper">
         <div ng-if="currentView" ng-include="currentView"></div>
-        <div ng-view></div>
     </div>
 
     <div class="footer" ng-style="{'background-color': footerColor}">

@@ -197,7 +197,7 @@ body {
 /* Main Content Section */
 .content-wrapper {
     margin-top: 100px; /* Space below the toolbar */
-    width: 80%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     max-width: 1000px; /* Optional: Set a max width */
     margin-left: auto;
     margin-right: auto;
