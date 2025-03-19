@@ -1,0 +1,26 @@
+.editToolbar {
+    top: 67px;
+    background-color: #DEEBF7;
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    height: 20px;
+}
+
+.editToolbar img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.editToolbar img:hover {
+    transform: scale(1.1);
+}
