@@ -19,7 +19,7 @@ angular.module('panasonicApp').controller('ChangeOrgController', function ($scop
     $scope.selectedStatus = null;
 
     function loadExistingData() {
-        $http.get('http://localhost:8888/api/organization/' + UserService.getUsername())
+        $http.get('/api/organization/' + UserService.getUsername())
             .then(function (response) {
                 if (response.data) {
                     console.log('Org:', response.data.orgId);
@@ -68,7 +68,7 @@ angular.module('panasonicApp').controller('ChangeOrgController', function ($scop
 
         console.log("Saving Data:", requestData);
 
-        $http.post('http://localhost:8888/api/saveOrganization', requestData, {
+        $http.post('/api/saveOrganization', requestData, {
             headers: { 'Content-Type': 'application/json' }
         })
         .then(function (response) {

@@ -2,7 +2,7 @@ angular.module('panasonicApp').service('AuthService', ['$http', '$q', function (
 
     this.login = function (username, password) {
 
-        return $http.post(`http://localhost:8888/api/login`, { username, password })
+        return $http.post(`/api/login`, { username, password })
             .then(function (response) {
 
                 localStorage.setItem('token', response.data.token); // ✅ Store token in local storage

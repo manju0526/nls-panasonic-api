@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+<style>
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
 <body>
     <div class="logo-section">
         <div class="header">
@@ -37,6 +43,7 @@
     <div class="footer">
         <p style="color: brown;">© 2025 NLS Panasonic.</p>
     </div>
+    
     <script src="assets/config/env.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
@@ -46,5 +53,6 @@
     <script src="app/services/userService.js"></script>
     <script src="app/controllers/dashboardController.js"></script>
     <script src="app/services/authService.js"></script>
+
 </body>
 </html>

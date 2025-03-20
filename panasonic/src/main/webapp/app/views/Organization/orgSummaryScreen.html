@@ -1,0 +1,79 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/styleAll.css"> 
+</head>
+<script>
+    function sortBy() {
+        alert("Sorting by ID");
+    }
+</script>
+
+<div ng-controller="orgSummaryScreenController">
+    <form name="theform">
+        <table width="90%" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr class="TITLE">
+                <td align="left"  valign="center">
+                    &nbsp;&nbsp;<img class="outline" id="id1" src="/assets/images/collapse.gif" border="0" alt="Simple Search" STYLE="CURSOR:HEAD">
+                    <b>Organization Summary</b>
+                </td>
+                <td align="right"  valign="top">
+                    <a href="javascript:window.close()">
+                        <img src="/assets/images/search.gif" alt="Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <table width="90%" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr class="LISTHEAD">
+                <td align="center" width="2%" class="COLHEAD" ></td>
+                <td align="left" width="10%">ID</td>
+                <td align="left"  width="10%">Name</td>
+                <td align="left" width="10%" >Group</td>
+                <td align="left" width="10%" >Status</td>
+                <td align="center" width="5%" >&nbsp;</td>
+            </tr>
+            <tr class="ROW1">  
+                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td align="center" nowrap>
+                    <a href="#">
+                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
+                    </a>
+                </td>
+                
+            </tr>
+            <tr class="ROW2"> 
+                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td align="center" nowrap>
+                    <a href="#">
+                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
+                    </a>
+                </td>
+            </tr>
+            <tr  class="ROW1">
+                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
+                <td>TESsT</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td>TEST</td>
+                <td align="center" nowrap>
+                    <a href="/api/organization/edit/1">
+                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+               <td>pagination</td>
+            </tr>
+           
+        </table>
+    </form>
+</div>
+
+</html>

@@ -1,5 +1,11 @@
 {
+  "name": "panasonic-webapp",
+  "version": "1.0.0",
   "devDependencies": {
+    "http-proxy-middleware": "^2.0.7",
     "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "start": "lite-server -c bs-config.js"
   }
 }
