@@ -72,7 +72,7 @@ angular.module('panasonicApp').controller('DashboardController', [
 
         // ✅ Fetch Organization Details
         function fetchOrganizationDetails() {
-            $http.get('http://localhost:8888/api/organization/' + $scope.username)
+            $http.get('/api/organization/' + $scope.username)
                 .then(function (response) {
                     if (response.data) {
                         $scope.orgName = response.data.orgId || "";

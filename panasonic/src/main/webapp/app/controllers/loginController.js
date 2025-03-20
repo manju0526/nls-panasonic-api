@@ -17,6 +17,7 @@ angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 
                     console.log('Login successful' + UserService.getGroup());
 
                     window.location.href = 'app/views/dashboard.html'; // ✅ Redirect
+
                 } else {
                     $scope.errorMessage = response.message;
                 }
@@ -37,7 +38,7 @@ angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 
 
         $scope.forgotPassword = function () {
             
-            $http.post('http://localhost:8888/api/forgotPassword', { username: $scope.user.username })
+            $http.post('/api/forgotPassword', { username: $scope.user.username })
             .then(function (response) {
                 $scope.successMessage = "Password reset link sent to your registered email.";
                 alert($scope.successMessage);
