@@ -1,21 +1,18 @@
 <head>
-    <link rel="stylesheet" href="/assets/css/styleAll.css"> 
+    <link rel="stylesheet" href="/assets/css/styleAll.css">
+
 </head>
-<script>
-    function sortBy() {
-        alert("Sorting by ID");
-    }
-</script>
 
 <div ng-controller="orgSummaryScreenController">
     <form name="theform">
         <table width="90%" class="TABLEBORDER" cellpadding="0" cellspacing="0">
             <tr class="TITLE">
-                <td align="left"  valign="center">
-                    &nbsp;&nbsp;<img class="outline" id="id1" src="/assets/images/collapse.gif" border="0" alt="Simple Search" STYLE="CURSOR:HEAD">
+                <td align="left" valign="center">
+                    &nbsp;&nbsp;<img class="outline" id="id1" ng-src="{{collapseIcon}}" alt="Simple Search"
+                        style="cursor: pointer;" ng-click="clickHandler($event)">
                     <b>Organization Summary</b>
                 </td>
-                <td align="right"  valign="top">
+                <td align="right" valign="top">
                     <a href="javascript:window.close()">
                         <img src="/assets/images/search.gif" alt="Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </a>
@@ -23,55 +20,65 @@
             </tr>
         </table>
         <table width="90%" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr id="id1z" style="display: none;">
+                <td align="center" class="SEARCHBAR" width="1%">&nbsp;</td>
+                <td align="left" class="SEARCHBAR" width="5%">
+                    <input type="text" ng-model="search_id" size="15" class="B" maxlength="15" placeholder="Search ID">
+                </td>
+                <td align="left" class="SEARCHBAR" width="5%">
+                    <input type="text" ng-model="search_org" size="15" class="B" maxlength="15" placeholder="Search Name">
+                </td>
+                <td align="left" class="SEARCHBAR" width="5%">
+                    <input type="text" ng-model="search_group" size="15" class="B" maxlength="15" placeholder="Search Group">
+                </td>
+                <td align="left" class="SEARCHBAR" width="5%">
+                    <input type="text" ng-model="search_status" size="15" class="B" maxlength="15" placeholder="Search Status">
+                </td>
+            </tr>
+        </table>        
+        </table>
+        <table width="90%" class="TABLEBORDER" cellpadding="0" cellspacing="0">
             <tr class="LISTHEAD">
-                <td align="center" width="2%" class="COLHEAD" ></td>
-                <td align="left" width="10%">ID</td>
-                <td align="left"  width="10%">Name</td>
-                <td align="left" width="10%" >Group</td>
-                <td align="left" width="10%" >Status</td>
-                <td align="center" width="5%" >&nbsp;</td>
+                <td align="center" width="2%" class="COLHEAD"></td>
+                <td ng-repeat="col in columns" align="{{col.align}}" width="{{col.width}}">
+                    <a href="javascript:void(0)" ng-click="sortBy(col.field)" style="text-decoration: underline;">
+                        {{col.label}}
+                    </a>
+                    <img ng-if="getSortIcon(col.field)" ng-src="{{getSortIcon(col.field)}}" alt="sort">
+                </td>
+                <td align="center" width="5%">&nbsp;</td>
             </tr>
-            <tr class="ROW1">  
-                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td>TEST</td>
+
+            <!-- Dynamic row rendering -->
+            <tr ng-repeat="org in orgList | filter:filterByColumns" ng-class="{'ROW1': $even, 'ROW2': $odd}">
+                <td align="center" width="2%">
+                    <div class="tooltip-container">
+                        <img src="/assets/images/record-info.gif" alt="recinfo">
+                        <div class="tooltip-box">
+                            Created By: {{org.createdBy}}<br>
+                            Created On: {{org.createdOn}}<br>
+                            Created At: {{org.createdAt}}<br>
+                            Modified By: {{org.modifiedBy}}<br>
+                            Modified On: {{org.modifiedOn}}<br>
+                            Modified At: {{org.modifiedAt}}
+                        </div>
+                    </div>
+                </td>
+                <td>{{ org.orgId }}</td>
+                <td>{{ org.name }}</td>
+                <td>{{ org.orggpId }}</td>
+                <td>{{ org.status }}</td>
                 <td align="center" nowrap>
                     <a href="#">
                         <img src="/assets/images/edit.gif" border="0" alt="Edit">
                     </a>
                 </td>
-                
             </tr>
-            <tr class="ROW2"> 
-                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td align="center" nowrap>
-                    <a href="#">
-                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
-                    </a>
-                </td>
-            </tr>
-            <tr  class="ROW1">
-                <td align="center" width="2%"><img src="/assets/images/record-info.gif" alt="recinfo"></td>
-                <td>TESsT</td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td>TEST</td>
-                <td align="center" nowrap>
-                    <a href="/api/organization/edit/1">
-                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
-                    </a>
-                </td>
-            </tr>
+
             <tr>
-               <td>pagination</td>
+                <td colspan="6" align="center">Pagination coming soon...</td>
             </tr>
-           
+
         </table>
     </form>
 </div>

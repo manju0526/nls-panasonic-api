@@ -12,7 +12,7 @@ angular.module('panasonicApp').controller('DashboardController', [
         $scope.menus = [
             {
                 name: "EVA Server", link: "#/eva", submenu: [
-                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Organization", link: "/app/views/Organization/orgSummaryScreen.html" },
                     { name: "Reports", link: "#/webtop/reports" },
                     { name: "Settings", link: "#/webtop/settings" }
                 ]
@@ -84,7 +84,7 @@ angular.module('panasonicApp').controller('DashboardController', [
                     }
                 })
                 .catch(function (error) {
-                    console.error("Error fetching organization details:", error);
+                    console.error("Error fetching organization details:", error.message);
                 });
         }
 

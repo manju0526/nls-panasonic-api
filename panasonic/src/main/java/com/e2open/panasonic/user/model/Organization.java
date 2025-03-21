@@ -18,6 +18,7 @@ public class Organization {
 	private String orgId;
 	private String orggpId;
 	private String status;
+	private String name;
 	private String createdBy;
 	private String createdAt;
 	private LocalDate createdOn;
@@ -104,5 +105,23 @@ public class Organization {
 	public void setModifiedOn(LocalDate modifiedOn) {
 		this.modifiedOn = modifiedOn;
 	}
+
+	public String getOrggpId() {
+		return orggpId;
+	}
+
+	public void setOrggpId(String orggpId) {
+		this.orggpId = orggpId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 
 }
