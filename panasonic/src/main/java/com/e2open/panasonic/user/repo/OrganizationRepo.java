@@ -16,6 +16,5 @@ public interface OrganizationRepo extends JpaRepository<Organization, Long> {
 	Organization findByCreatedBy(String orgId);
 	
 	Optional<Organization> findByCreatedAt(String userName);
-	
 
 }

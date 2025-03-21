@@ -291,9 +291,6 @@ BACKGROUND-COLOR:RED;
 BACKGROUND-COLOR:#e9f2f8;
 }
 
-
-
-
 .RightCurve{
 Background-Attachment : scroll ;
 Background-Image : url(/NLS/images/FFFFFFr.gif) ;
@@ -366,7 +363,7 @@ Font-Family : Arial, Helvetica ;
 Font-Size : 8pt ;
 Font-Weight : Bold ;
 }
-/* [Added by G R M K Reddy on 18-08-2008 For NLS2007091 TCER 2(b) starts] */
+
 .LABEL-DISABLED
 {
 FONT-SIZE: 11px;
@@ -376,16 +373,14 @@ COLOR: GRAY;
 BACKGROUND-COLOR: #DEDFDE;
 text-align : right;
 }
-/* [Added by G R M K Reddy on 18-08-2008 For NLS2007091 TCER 2(b) ends] */
-/* Added By Anitha on 21-06-2011 For NLS2010013- Trade Compliance Alert CR Starts*/
+
 .TEXTAREA
 {
     FONT-SIZE: 11px;
     FONT-FAMILY: tahoma,arial;
     COLOR: #000000;    
 }
-/* Added By Anitha on 21-06-2011 For NLS2010013- Trade Compliance Alert CR Ends*/
-/*Added By Anitha on 11-07-11 For LOV Change Starts*/
+
 .select
 {
     BORDER-RIGHT: #8d8d8d 1px solid;
@@ -397,8 +392,7 @@ text-align : right;
     FONT-FAMILY: tahoma,arial;
     COLOR: #000000;    
 }
-/*Added By Anitha on 11-07-11 For LOV Change Ends*/
-/*[Added By Nagma on 12-05-2016 For NLS2015008-ARI Sequence No. and Payment Due Date CR Starts]*/
+
 .COLTEXT
 {
     FONT-SIZE: 11px;
@@ -407,10 +401,8 @@ FONT-WEIGHT: bold;
 BACKGROUND-COLOR: #DEE7F7;
 text-align : left;
 }
-/*[Added By Nagma on 12-05-2016 For NLS2015008-ARI Sequence No. and Payment Due Date CR Ends]*/
 
 
-/*[Added By Ramu on 25-12-2016 For NLS2015015 - NLS BPO CR Starts]*/
 .COLHEAD1
 {
 FONT-SIZE: 11px;
@@ -421,5 +413,47 @@ BACKGROUND-COLOR: #DEDFDE;
 text-align : left;
 }
 
-/*[Added By Ramu on 25-12-2016 For NLS2015015 - NLS BPO CR Ends]*/
+
+/*Added for record info purpose start*/
+.tooltip-box {
+    display: none;
+    position: absolute;
+    left: 130px;
+    top: 30px;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    border: 1px solid #666;
+    padding: 8px 14px;
+    border-radius: 6px;
+    white-space: pre-line;
+    font-size: 13px;
+    text-align: left;
+    min-width: 200px;
+    max-width: 300px;
+    line-height: 0.8;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0);
+    position: absolute;
+}
+
+.tooltip-box::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0) transparent transparent transparent;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-container:hover .tooltip-box {
+    display: block;
+}
+/*Added for record info purpose end*/
 

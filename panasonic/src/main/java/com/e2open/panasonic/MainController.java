@@ -1,6 +1,7 @@
 package com.e2open.panasonic;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,5 +107,17 @@ public class MainController {
 	public boolean validateToken(@RequestParam String token) {
 		return passwordResetService.validateToken(token);
 	}
+	
+	@GetMapping("/organization/listAll")
+	public ResponseEntity<?> getOrganizationList() {
+		try {
+		List<Organization> orgLists = organizationService.getOrganizationLists();
+		return ResponseEntity.status(HttpStatus.OK).body(orgLists);
+		}catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getStackTrace());
+		}
+		
+	}
+
 
 }

@@ -1,6 +1,7 @@
 package com.e2open.panasonic.user.service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,5 +49,9 @@ public class OrganizationService {
 
 	public Organization getOrganizationByUser(String userName) {
 		return organizationRepo.findByCreatedAt(userName).orElse(null);
+	}
+	
+	public List<Organization> getOrganizationLists(){
+		return organizationRepo.findAll();
 	}
 }
