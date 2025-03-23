@@ -1,0 +1,192 @@
+<head>
+    <link rel="stylesheet" href="../../../assets/css/styleAll.css">
+</head>
+
+<div ng-controller="SOSummaryScreenController">
+    <div>
+        <div class="editToolbar">
+            <img src="../../../assets/images/home.gif" ng-click="goHome()" title="Home">
+            <img src="../../../assets/images/qry.jpg" ng-click="openQuery()" title="Query">
+        </div>
+    </div>
+    <div ng-show="loading" class="overlay">
+        <div class="spinner-container">
+            <img src="/assets/images/loading.gif" alt="Loading...">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <form name="theform" ng-show="!loading">
+        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr class="TITLE">
+                <td align="left" valign="center">
+                    &nbsp;&nbsp;<img class="outline" id="id1" ng-src="{{collapseIcon}}" alt="Simple Search"
+                        style="cursor: pointer;" ng-click="clickHandler($event)">
+                    <b>Sales Orders</b>
+                </td>
+                <td align="right" valign="top">
+                    <a href="javascript:window.close()">
+                        <img src="../../../assets/images/search.gif" alt="Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr id="id1z" style="display: none;">
+                <td align="center" class="SEARCHBAR" width="6%">&nbsp;</td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_id" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_extSysRefDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_receivedDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_transType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_tradeType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orderType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orgpId" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orgpId1" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orgpId3" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orgpId5" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orgserpoId2" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_customerPoNumber" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_customerRequestDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_transportMode" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_orderPriority" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_reference1" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_status" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_gtmStatus" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="left" class="SEARCHBAR" width="6%">
+                    <input type="text" ng-model="search_gtmStatusDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                </td>
+                <td align="center" class="SEARCHBAR" width="6%"></td>
+            </tr>
+        </table>
+        
+        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+            <tr class="LISTHEAD">
+                <td align="center" width="2%" class="COLHEAD"></td>
+                <td ng-repeat="col in columns" align="{{col.align}}" width="{{col.width}}">
+                    <a href="javascript:void(0)" ng-click="sortBy(col.field)" style="text-decoration: underline;">
+                        {{col.label}}
+                    </a>
+                    <img ng-if="getSortIcon(col.field)" ng-src="{{getSortIcon(col.field)}}" alt="sort">
+                </td>
+                 <td align="center" width="5%">&nbsp;</td> 
+            </tr>
+
+            <!-- Dynamic row rendering -->
+            <tr ng-repeat="so in displayList" ng-class="{'ROW1': $even, 'ROW2': $odd}">
+                <td align="center" width="2%">
+                    <div class="tooltip-container">
+                        <img src="../../../assets/images/record-info.gif" alt="recinfo">
+                        <div class="tooltip-box">
+                            Created By: {{so.createdBy}}<br>
+                            Created On: {{so.createdOn}}<br>
+                            Created At: {{so.createdAt}}<br>
+                            Modified By: {{so.modifiedBy}}<br>
+                            Modified On: {{so.modifiedOn}}<br>
+                            Modified At: {{so.modifiedAt}}
+                        </div>
+                    </div>
+                </td>
+                <td>{{ so.salesOrderId.id }}</td>
+                <td>{{ so.extSysRefDate }}</td>
+                <td>{{ so.receivedDate }}</td>
+                <td>{{ so.transType }}</td>
+                <td>{{ so.tradeType }}</td>
+                <td>{{ so.orderType }}</td>
+                <td>{{ so.orgpId }}</td>
+                <td>{{ so.orgpId1 }}</td>
+                <td>{{ so.orgpId3 }}</td>
+                <td>{{ so.orgpId5 }}</td>
+                <td>{{ so.orgserpoId2 }}</td>
+                <td>{{ so.customerPoNumber }}</td>
+                <td>{{ so.customerRequestDate }}</td>
+                <td>{{ so.transportMode }}</td>
+                <td>{{ so.orderPriority }}</td>
+                <td>{{ so.reference1 }}</td>
+                <td>{{ so.status }}</td>
+                <td>{{ so.gtmStatus }}</td>
+                <td>{{ so.gtmStatusDate }}</td>
+
+                 <td align="center" nowrap>
+                    <a href="#">
+                        <img src="/assets/images/edit.gif" border="0" alt="Edit">
+                    </a>
+                </td> 
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <table width="90%">
+                        <tr>
+                            <td width="50%" align="left">
+                                &nbsp;&nbsp;
+                                <font size="2" color="black"><b>&nbsp;&lt;&lt;&nbsp;</b></font>
+                                &nbsp;&nbsp;
+                                <span ng-repeat="n in [].constructor(totalPages) track by $index">
+                                    <span ng-if="$index+1 === currentPage">
+                                        <font size="3" color="black"><b>{{$index+1}}</b></font>
+                                    </span>
+                                    <a ng-if="$index+1 !== currentPage" href="javascript:void(0)"
+                                        ng-click="pgSelect($index+1)">
+                                        <font size="2" color="blue"><b>{{$index+1}}</b></font>
+                                    </a>
+                                    &nbsp;&nbsp;
+                                </span>
+                                <a href="javascript:void(0)" ng-click="pgSelect(currentPage+1)">
+                                    <font size="2" color="blue"><b>&nbsp;&gt;&gt;</b></font>
+                                </a>
+                            </td>
+                            <td align="right">
+                                &nbsp;&nbsp;
+                                <font size="2" color="black"><b>Pages : {{ currentPage }}&nbsp;of&nbsp;{{ totalPages
+                                        }}</b>
+                                </font>
+                                &nbsp;&nbsp;&nbsp;
+                                <font size="2" color="black"><b>Total Records : {{ totalRecords }}</b></font>
+                                &nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</div>
+
+</html>

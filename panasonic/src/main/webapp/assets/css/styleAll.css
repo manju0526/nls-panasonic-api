@@ -1,70 +1,78 @@
-A
-{
+A {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     TEXT-DECORATION: none;
 }
 
-A:link      {color: #003399; }
-A:visited   {color: #003399; }
-A:active    {color: #003399; }
-A:hover     {color: #FF0000; }
-
-.COLHEAD
-{
-FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-COLOR: #000000;
-BACKGROUND-COLOR: #DEDFDE;
-text-align : right;
-}
-.FONTBOLD
-{
-FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-COLOR: #000000;
-BACKGROUND-COLOR: #DEDFDE;
+A:link {
+    color: #003399;
 }
 
-.MANDATORY
-{
-FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-COLOR: RED;
-BACKGROUND-COLOR: #DEDFDE;
-text-align : right;
+A:visited {
+    color: #003399;
 }
-.ERROR
-{
+
+A:active {
+    color: #003399;
+}
+
+A:hover {
+    color: #FF0000;
+}
+
+.COLHEAD {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #DEDFDE;
+    text-align: right;
+}
+
+.FONTBOLD {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #DEDFDE;
+}
+
+.MANDATORY {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: RED;
+    BACKGROUND-COLOR: #DEDFDE;
+    text-align: right;
+}
+
+.ERROR {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma, arial;
     COLOR: RED;
     BACKGROUND-COLOR: #DEE7F7;
 }
-.ERRORBAR
-{
+
+.ERRORBAR {
     FONT-SIZE: 12px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: RED;
 }
-.SUCCESSBAR
-{
+
+.SUCCESSBAR {
     FONT-SIZE: 12px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: GREEN;
 }
-.SUCCESSMSG
-{
+
+.SUCCESSMSG {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: GREEN;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: GREEN;
     BACKGROUND-COLOR: #DEE7F7;
 }
-.SUCCES-BTN
-{
+
+.SUCCES-BTN {
     BORDER-RIGHT: #000000 1px solid;
     BORDER-TOP: #000000 1px solid;
     BORDER-LEFT: #000000 1px solid;
@@ -73,11 +81,11 @@ text-align : right;
     BACKGROUND-COLOR: #4292C6;
     TEXT-DECORATION: none;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #FFFFFF;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #FFFFFF;
 }
-.NAVIGATION-BTN
-{
+
+.NAVIGATION-BTN {
     BORDER-RIGHT: #000000 1px solid;
     BORDER-TOP: #000000 1px solid;
     BORDER-LEFT: #000000 1px solid;
@@ -86,76 +94,72 @@ text-align : right;
     BACKGROUND-COLOR: #635194;
     TEXT-DECORATION: none;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: #FFFFFF;
-CURSOR:HAND;
+    CURSOR: HAND;
 }
 
 
-.LISTHEAD
-{
+.LISTHEAD {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     FONT-WEIGHT: bold;
     COLOR: #000000;
-    BACKGROUND-COLOR: #DEDFDE;    
+    BACKGROUND-COLOR: #DEDFDE;
 }
 
-.ACTION
-{
+.ACTION {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
     BACKGROUND-COLOR: #DEEBF7;
 }
 
-.ROW1
-{
+.ROW1 {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: #000000;
-    BACKGROUND-COLOR: #EFF3FF;    
-    HEIGHT: 20px; /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
+    BACKGROUND-COLOR: #EFF3FF;
+    HEIGHT: 20px;
+    /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
 }
-.ROW2
-{
+
+.ROW2 {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: #000000;
-    BACKGROUND-COLOR: #FFFFFF;    
-    HEIGHT: 20px; /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
+    BACKGROUND-COLOR: #FFFFFF;
+    HEIGHT: 20px;
+    /*[Added By Anitha on 18-08-2014 For NLS2014006 - NLS Auto Create DTD and Sales Invoice CR]*/
 }
 
 
-.TITLE
-{
+.TITLE {
     FONT-SIZE: 14px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     FONT-WEIGHT: bold;
     COLOR: #FFFFFF;
-    BACKGROUND-COLOR: #639ACE;    
-}
-.SEARCHBAR
-{
-    FONT-SIZE: 14px;
-    FONT-FAMILY: tahoma,arial;
-    FONT-WEIGHT: bold;
-    COLOR: #FFFFFF;
-    BACKGROUND-COLOR: #63D35A;    
+    BACKGROUND-COLOR: #639ACE;
 }
 
-.SUBCOLHEAD
-{
+.SEARCHBAR {
+    FONT-SIZE: 14px;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: #FFFFFF;
+    BACKGROUND-COLOR: #63D35A;
+}
+
+.SUBCOLHEAD {
     FONT-SIZE: 11px;
     FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
     FONT-WEIGHT: bold;
     COLOR: #FFFFFF;
-    BACKGROUND-COLOR: #639ACE;  
+    BACKGROUND-COLOR: #639ACE;
 }
 
 
-.A
-{
+.A {
     BORDER-RIGHT: #000000 1px solid;
     BORDER-TOP: #000000 1px solid;
     BORDER-LEFT: #000000 1px solid;
@@ -164,11 +168,11 @@ CURSOR:HAND;
     BACKGROUND-COLOR: #EFF3FF;
     TEXT-DECORATION: none;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
 }
-.LOGOUT
-{
+
+.LOGOUT {
     BORDER-RIGHT: #000000 1px solid;
     BORDER-TOP: #000000 1px solid;
     BORDER-LEFT: #000000 1px solid;
@@ -177,20 +181,19 @@ CURSOR:HAND;
     BACKGROUND-COLOR: #EFF3FF;
     TEXT-DECORATION: none;
     FONT-SIZE: 10px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
 }
 
-.LABEL
-{
+.LABEL {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: #000000;
     BACKGROUND-COLOR: #DEE7F7;
-   
+
 }
-.B
-{
+
+.B {
     BORDER-RIGHT: #8d8d8d 1px solid;
     BORDER-TOP: #8d8d8d 1px solid;
     BORDER-LEFT: #8d8d8d 1px solid;
@@ -198,51 +201,50 @@ CURSOR:HAND;
     BORDER-BOTTOM: #8d8d8d 1px solid;
     HEIGHT: 18px;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
 }
-.TEXTBOX
-{
+
+.TEXTBOX {
     BACKGROUND-COLOR: #f8f8fa;
 }
 
-.LOGOBAR
-{
+.LOGOBAR {
     BACKGROUND-COLOR: #4292C6;
 }
-.TABLEBORDER
-{
-BACKGROUND-COLOR:#e9f2f8;
-PADDING:1px;
-BORDER:solid 1px #4791C5;
-TOP:0px;
-LEFT:0px;
-WHITE-SPACE:normal; /*Modified by Ramu on 12-03-2021 For 300-148609,300-154447]*/
-}
-.MENUBORDER
-{
-BACKGROUND-COLOR:#B5D7F7;
-PADDING:1px;
-BORDER:solid 1px #4791C5;
-TOP:0px;
-LEFT:0px;
-WHITE-SPACE:nowrap;
+
+.TABLEBORDER {
+    BACKGROUND-COLOR: #e9f2f8;
+    PADDING: 1px;
+    BORDER: solid 1px #4791C5;
+    TOP: 0px;
+    LEFT: 0px;
+    WHITE-SPACE: normal;
+    /*Modified by Ramu on 12-03-2021 For 300-148609,300-154447]*/
 }
 
-.lov
-{
+.MENUBORDER {
+    BACKGROUND-COLOR: #B5D7F7;
+    PADDING: 1px;
+    BORDER: solid 1px #4791C5;
+    TOP: 0px;
+    LEFT: 0px;
+    WHITE-SPACE: nowrap;
+}
+
+.lov {
     BORDER-RIGHT: #8d8d8d 1px solid;
     BORDER-TOP: #8d8d8d 1px solid;
     BORDER-LEFT: #8d8d8d 1px solid;
     COLOR: black;
     BORDER-BOTTOM: #8d8d8d 1px solid;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
 }
-.R
-{
-    BACKGROUND-COLOR:#EDEBEB;
+
+.R {
+    BACKGROUND-COLOR: #EDEBEB;
     BORDER-RIGHT: #8d8d8d 1px solid;
     BORDER-TOP: #8d8d8d 1px solid;
     BORDER-LEFT: #8d8d8d 1px solid;
@@ -250,35 +252,35 @@ WHITE-SPACE:nowrap;
     BORDER-BOTTOM: #8d8d8d 1px solid;
     HEIGHT: 18px;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: GREY;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: GREY;
 }
-.RTEXTAREA
-{
-    BACKGROUND-COLOR:#EDEBEB;
+
+.RTEXTAREA {
+    BACKGROUND-COLOR: #EDEBEB;
     BORDER-RIGHT: #8d8d8d 1px solid;
     BORDER-TOP: #8d8d8d 1px solid;
     BORDER-LEFT: #8d8d8d 1px solid;
     COLOR: black;
     BORDER-BOTTOM: #8d8d8d 1px solid;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: GREY;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: GREY;
 }
-.FooterDefault
-{
-BACKGROUND-COLOR:MAROON;
+
+.FooterDefault {
+    BACKGROUND-COLOR: MAROON;
 }
-.FooterSuccess
-{
-BACKGROUND-COLOR:GREEN;
+
+.FooterSuccess {
+    BACKGROUND-COLOR: GREEN;
 }
-.FooterError
-{
-BACKGROUND-COLOR:RED;
+
+.FooterError {
+    BACKGROUND-COLOR: RED;
 }
-.READONLY
-{
+
+.READONLY {
     BORDER-RIGHT: #8d8d8d 0px solid;
     BORDER-TOP: #8d8d8d 0px solid;
     BORDER-LEFT: #8d8d8d 0px solid;
@@ -286,131 +288,137 @@ BACKGROUND-COLOR:RED;
     BORDER-BOTTOM: #8d8d8d 0px solid;
     HEIGHT: 18px;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
+    FONT-FAMILY: tahoma, arial;
     COLOR: #000000;
-BACKGROUND-COLOR:#e9f2f8;
+    BACKGROUND-COLOR: #e9f2f8;
 }
 
-.RightCurve{
-Background-Attachment : scroll ;
-Background-Image : url(/NLS/images/FFFFFFr.gif) ;
-Background-Position : right top ;
-Background-Repeat : no-repeat ;
-}
-.LeftSubTabid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #336699 ;
-Background-Image : url(/NLS/images/FFFFFFsl.gif) ;
-Background-Position : left top ;
-Background-Repeat : no-repeat ;
-}
-.LeftTabBgSlantid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #CCCC99 ;
-Background-Image : url(/NLS/images/FFFFFFtl.gif) ;
-Background-Position : left top ;
-Background-Repeat : no-repeat ;
-}
-.LeftTabForeSlantid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #336699 ;
-Background-Image : url(/NLS/images/FFFFFFtl.gif) ;
-Background-Position : left top ;
-Background-Repeat : no-repeat ;
-}
-.RightSubTabid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #336699 ;
-Background-Image : url(/NLS/images/FFFFFFsr.gif) ;
-Background-Position : right top ;
-}
-.RightTabBgCurveid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #CCCC99 ;
-Background-Image : url(/NLS/images/FFFFFFtr.gif) ;
-Background-Position : right top ;
-Background-Repeat : no-repeat ;
-}
-.RightTabForeCurveid704112siteid0{
-Background-Attachment : scroll ;
-Background-Color : #336699 ;
-Background-Image : url(/NLS/images/FFFFFFtr.gif) ;
-Background-Position : right top ;
-Background-Repeat : no-repeat ;
-}
-.SubTabBgTextid704112siteid0{
-Color : #CCCC99 ;
-Text-Decoration : none ;
-Font-Family : Arial, Helvetica ;
-Font-Size : 8pt ;
-Font-Weight : Bold ;
-}
-.TabBackgroundColorid704112siteid0{
-Background-Color : #CCCC99 ;
-}
-.TabBackgroundTextid704112siteid0{
-Color : #003366 ;
-Text-Decoration : none ;
-Font-Family : Arial, Helvetica ;
-Font-Size : 8pt ;
-}
-.TabForegroundColorid704112siteid0{
-Background-Color : #336699 ;
-}
-.TabForegroundTextid704112siteid0{
-Color : #FFFFFF ;
-Font-Family : Arial, Helvetica ;
-Font-Size : 8pt ;
-Font-Weight : Bold ;
+.RightCurve {
+    Background-Attachment: scroll;
+    Background-Image: url(/NLS/images/FFFFFFr.gif);
+    Background-Position: right top;
+    Background-Repeat: no-repeat;
 }
 
-.LABEL-DISABLED
-{
-FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-COLOR: GRAY;
-BACKGROUND-COLOR: #DEDFDE;
-text-align : right;
+.LeftSubTabid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #336699;
+    Background-Image: url(/NLS/images/FFFFFFsl.gif);
+    Background-Position: left top;
+    Background-Repeat: no-repeat;
 }
 
-.TEXTAREA
-{
+.LeftTabBgSlantid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #CCCC99;
+    Background-Image: url(/NLS/images/FFFFFFtl.gif);
+    Background-Position: left top;
+    Background-Repeat: no-repeat;
+}
+
+.LeftTabForeSlantid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #336699;
+    Background-Image: url(/NLS/images/FFFFFFtl.gif);
+    Background-Position: left top;
+    Background-Repeat: no-repeat;
+}
+
+.RightSubTabid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #336699;
+    Background-Image: url(/NLS/images/FFFFFFsr.gif);
+    Background-Position: right top;
+}
+
+.RightTabBgCurveid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #CCCC99;
+    Background-Image: url(/NLS/images/FFFFFFtr.gif);
+    Background-Position: right top;
+    Background-Repeat: no-repeat;
+}
+
+.RightTabForeCurveid704112siteid0 {
+    Background-Attachment: scroll;
+    Background-Color: #336699;
+    Background-Image: url(/NLS/images/FFFFFFtr.gif);
+    Background-Position: right top;
+    Background-Repeat: no-repeat;
+}
+
+.SubTabBgTextid704112siteid0 {
+    Color: #CCCC99;
+    Text-Decoration: none;
+    Font-Family: Arial, Helvetica;
+    Font-Size: 8pt;
+    Font-Weight: Bold;
+}
+
+.TabBackgroundColorid704112siteid0 {
+    Background-Color: #CCCC99;
+}
+
+.TabBackgroundTextid704112siteid0 {
+    Color: #003366;
+    Text-Decoration: none;
+    Font-Family: Arial, Helvetica;
+    Font-Size: 8pt;
+}
+
+.TabForegroundColorid704112siteid0 {
+    Background-Color: #336699;
+}
+
+.TabForegroundTextid704112siteid0 {
+    Color: #FFFFFF;
+    Font-Family: Arial, Helvetica;
+    Font-Size: 8pt;
+    Font-Weight: Bold;
+}
+
+.LABEL-DISABLED {
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: GRAY;
+    BACKGROUND-COLOR: #DEDFDE;
+    text-align: right;
 }
 
-.select
-{
+.TEXTAREA {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
+}
+
+.select {
     BORDER-RIGHT: #8d8d8d 1px solid;
     BORDER-TOP: #8d8d8d 1px solid;
     BORDER-LEFT: #8d8d8d 1px solid;
     COLOR: black;
     BORDER-BOTTOM: #8d8d8d 1px solid;
     FONT-SIZE: 11px;
-    FONT-FAMILY: tahoma,arial;
-    COLOR: #000000;    
+    FONT-FAMILY: tahoma, arial;
+    COLOR: #000000;
 }
 
-.COLTEXT
-{
+.COLTEXT {
     FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-BACKGROUND-COLOR: #DEE7F7;
-text-align : left;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #DEE7F7;
+    text-align: left;
 }
 
 
-.COLHEAD1
-{
-FONT-SIZE: 11px;
-FONT-FAMILY: tahoma,arial;
-FONT-WEIGHT: bold;
-COLOR: #000000;
-BACKGROUND-COLOR: #DEDFDE;
-text-align : left;
+.COLHEAD1 {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: tahoma, arial;
+    FONT-WEIGHT: bold;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #DEDFDE;
+    text-align: left;
 }
 
 
@@ -421,7 +429,7 @@ text-align : left;
     left: 130px;
     top: 30px;
     transform: translateX(-50%);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border: 1px solid #666;
     padding: 8px 14px;
@@ -432,7 +440,7 @@ text-align : left;
     min-width: 200px;
     max-width: 300px;
     line-height: 0.8;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
     position: absolute;
 }
 
@@ -444,7 +452,7 @@ text-align : left;
     margin-left: -6px;
     border-width: 6px;
     border-style: solid;
-    border-color: rgba(0,0,0,0) transparent transparent transparent;
+    border-color: rgba(0, 0, 0, 0) transparent transparent transparent;
 }
 
 .tooltip-container {
@@ -455,5 +463,55 @@ text-align : left;
 .tooltip-container:hover .tooltip-box {
     display: block;
 }
+
 /*Added for record info purpose end*/
 
+/*Added for action bar start*/
+.editToolbar {
+    top: 67px;
+    background-color: #DEEBF7;
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    height: 20px;
+}
+
+.editToolbar img {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.editToolbar img:hover {
+    transform: scale(1.1);
+}
+
+/*Added for action bar End*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.spinner-container {
+    text-align: center;
+}
+.spinner-container img {
+    width: 60px;
+    height: 60px;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="panasonicApp">
+
 <head>
     <title>Panasonic Login</title>
     <base href="/">
@@ -8,10 +9,16 @@
 </head>
 <style>
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>
+
 <body>
     <div class="logo-section">
         <div class="header">
@@ -19,7 +26,7 @@
             <img src="./assets/images/logo-right.jpg" alt="Right Logo" class="logo-right">
         </div>
     </div>
-    <div class="divider"></div>   
+    <div class="divider"></div>
     <div class="background">
         <div ng-view></div>
     </div>
@@ -43,7 +50,7 @@
     <div class="footer">
         <p style="color: brown;">© 2025 NLS Panasonic.</p>
     </div>
-    
+
     <script src="assets/config/env.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
@@ -51,8 +58,9 @@
     <script src="app/app.config.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/services/userService.js"></script>
-    <script src="app/controllers/dashboardController.js"></script>
+    <script src="app/controllers/WelcomeController.js"></script>
     <script src="app/services/authService.js"></script>
 
 </body>
+
 </html>

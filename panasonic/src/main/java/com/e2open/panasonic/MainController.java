@@ -3,6 +3,7 @@ package com.e2open.panasonic;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e2open.panasonic.dto.OrganizationRequest;
+import com.e2open.panasonic.oms.model.SalesOrder;
+import com.e2open.panasonic.oms.service.SalesOrderService;
 import com.e2open.panasonic.security.JWTUtil;
 import com.e2open.panasonic.user.model.Organization;
 import com.e2open.panasonic.user.model.User;
@@ -42,6 +45,9 @@ public class MainController {
 	@Autowired
 	private PasswordResetService passwordResetService;
 
+	@Autowired
+	private static SalesOrderService salesOrderService;
+
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user) {
 		User loggedInUser = userService.login(user.getUsername(), user.getPassword());
@@ -57,8 +63,8 @@ public class MainController {
 			return ResponseEntity.ok(response);
 		} else {
 			Map<String, String> errorResponse = new HashMap<>();
-	        errorResponse.put("error", "Invalid username or password");
-	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
+			errorResponse.put("error", "Invalid username or password");
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
 		}
 	}
 
@@ -107,17 +113,32 @@ public class MainController {
 	public boolean validateToken(@RequestParam String token) {
 		return passwordResetService.validateToken(token);
 	}
-	
+
 	@GetMapping("/organization/listAll")
 	public ResponseEntity<?> getOrganizationList() {
 		try {
-		List<Organization> orgLists = organizationService.getOrganizationLists();
-		return ResponseEntity.status(HttpStatus.OK).body(orgLists);
-		}catch (Exception e) {
+			List<Organization> orgLists = organizationService.getOrganizationLists();
+			return ResponseEntity.status(HttpStatus.OK).body(orgLists);
+		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getStackTrace());
 		}
-		
+
 	}
 
+	// OMS Modules start
+
+	@GetMapping("/so/listAll/{orgId}")
+	public ResponseEntity<?> getSalesOrdersByOrgId(@PathVariable String orgId) {
+		try {
+			System.out.println("ORG ID:::"+orgId);
+			List<SalesOrder> soLists = SalesOrderService.getSalesOrdersByOrgId(orgId);
+			return ResponseEntity.status(HttpStatus.OK).body(soLists);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+	}
+
+	// OMS Modules End
 
 }

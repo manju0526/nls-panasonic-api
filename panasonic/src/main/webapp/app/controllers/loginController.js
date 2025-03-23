@@ -1,5 +1,5 @@
-angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 'AuthService', 'UserService',
-    function ($scope, $http,AuthService, UserService) {
+angular.module('panasonicApp').controller('LoginController', ['$scope', '$http', 'AuthService', 'UserService',
+    function ($scope, $http, AuthService, UserService) {
         $scope.user = { username: '', password: '' };
         $scope.errorMessage = '';
 
@@ -16,10 +16,11 @@ angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 
 
                     console.log('Login successful' + UserService.getGroup());
 
-                    window.location.href = 'app/views/dashboard.html'; // ✅ Redirect
+                    window.location.href = 'app/views/welcome.html'; // ✅ Redirect
 
                 } else {
                     $scope.errorMessage = response.message;
+                    $scope.loading = false;
                 }
             }).catch(function (error) {
                 $scope.errorMessage = error.message || "Login failed.";
@@ -37,19 +38,19 @@ angular.module('panasonicApp').controller('LoginController', ['$scope','$http', 
         };
 
         $scope.forgotPassword = function () {
-            
+
             $http.post('/api/forgotPassword', { username: $scope.user.username })
-            .then(function (response) {
-                $scope.successMessage = "Password reset link sent to your registered email.";
-                alert($scope.successMessage);
-            })
-            .catch(function (error) {
-                $scope.errorMessage = error.data || "Please provide a valid username to Re-set password.";
-                alert($scope.errorMessage);
-            });
-        
-        
-        
+                .then(function (response) {
+                    $scope.successMessage = "Password reset link sent to your registered email.";
+                    alert($scope.successMessage);
+                })
+                .catch(function (error) {
+                    $scope.errorMessage = error.data || "Please provide a valid username to Re-set password.";
+                    alert($scope.errorMessage);
+                });
+
+
+
         };
 
     }

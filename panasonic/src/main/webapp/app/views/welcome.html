@@ -9,14 +9,15 @@
     <script src="../../app/app.config.js"></script>
     <script src="../../app/services/userService.js"></script>
     <script src="../../app/services/authService.js"></script>
-    <script src="../../app/controllers/dashboardController.js"></script>
+    <script src="../../app/controllers/WelcomeController.js"></script>
     <script src="../../app/controllers/changeOrgController.js"></script>
-    <script src="../../app/controllers/editToolbarController.js"></script>
+    <script src="../../app/controllers/loginController.js"></script>
     <script src="../../app/controllers/Organizations/orgSummaryScreenController.js"></script>
+    <script src="../../app/controllers/oms/SOsummaryScreen.js"></script>
 </head>
 
-<body ng-controller="DashboardController">
-   
+
+<body ng-controller="WelcomeController">
     <div class="header">
         <div class="user-info">
             <div class="user-info-left">
@@ -37,24 +38,22 @@
         </div>
         <div class="toolbar">
             <ul class="menu">
-                <li ng-repeat="menu in menus" class="dropdown"
-                    ng-mouseenter="menu.showDropdown = true"
+                <li ng-repeat="menu in menus" class="dropdown" ng-mouseenter="menu.showDropdown = true"
                     ng-mouseleave="menu.showDropdown = false">
-                    
+
                     <span class="menu-item" ng-click="navigate(menu.link)">
                         {{ menu.name }} <span ng-if="menu.submenu" class="arrow">&#9662;</span>
                     </span>
-        
+
                     <!-- First Level Dropdown -->
                     <ul class="dropdown-menu" ng-show="menu.showDropdown">
-                        <li ng-repeat="sub in menu.submenu" class="dropdown"
-                            ng-mouseenter="sub.showDropdown = true"
+                        <li ng-repeat="sub in menu.submenu" class="dropdown" ng-mouseenter="sub.showDropdown = true"
                             ng-mouseleave="sub.showDropdown = false">
-                            
+
                             <span class="submenu-item" ng-click="navigate(sub.link)">
                                 {{ sub.name }} <span ng-if="sub.children" class="arrow">&#9656;</span>
                             </span>
-        
+
                             <!-- Second Level Dropdown -->
                             <ul class="dropdown-menu sub-menu" ng-show="sub.showDropdown">
                                 <li ng-repeat="child in sub.children">
@@ -68,21 +67,20 @@
                 </li>
             </ul>
         </div>
-        
-        
-        
+
     </div>
     <div class="content-wrapper">
         <div ng-if="currentView" ng-include="currentView"></div>
     </div>
 
-    <div class="footer" ng-style="{'background-color': footerColor}">
+    <div class="footer" ng-style="{'background-color': footerColor}"> 
         <div class="footer-left">
-            <img ng-if="footerIcon" src="./../../assets/images/footer-icon.png" class="footer-icon" ng-click="showFooterAlert()" />
+            <img ng-if="footerIcon" src="./../../assets/images/footer-icon.png" class="footer-icon"
+                ng-click="showFooterAlert()" />
             <span class="footer-text">{{ footerMessage }}</span>
         </div>
         <p class="footer-copyright">&copy; Copyright © 2004, Four Soft Singapore.All rights reserved.</p>
-    </div>   
+    </div>
 
 </body>
 
