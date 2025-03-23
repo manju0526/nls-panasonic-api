@@ -1,16 +1,29 @@
-angular.module('panasonicApp').controller('orgSummaryScreenController', function ($scope, $http, $rootScope) {
+angular.module('panasonicApp').controller('SOSummaryScreenController', function ($scope, $http, $rootScope, UserService) {
     $scope.currentPage = 1;
     $scope.pageSize = 10;
-    $scope.orgList = [];
     $scope.displayList = [];
     $scope.totalRecords = 0;
-    $scope.totalPages = 0;
-
+    $scope.loading = false;
     $scope.columns = [
-        { field: 'orgId', label: 'ID', width: '10%', align: 'left' },
-        { field: 'name', label: 'Name', width: '10%', align: 'left' },
-        { field: 'orggpId', label: 'Group', width: '10%', align: 'left' },
-        { field: 'status', label: 'Status', width: '10%', align: 'left' }
+        { field: 'id', label: 'SO#', width: '5%', align: 'left' },
+        { field: 'ext_sys_ref_no', label: 'PC Order#', width: '5%', align: 'left' },
+        { field: 'received_date', label: 'Receive Date', width: '5%', align: 'left' },
+        { field: 'trans_type', label: 'Product Type', width: '5%', align: 'left' },
+        { field: 'trade_type', label: 'Trade Type', width: '5%', align: 'left' },
+        { field: 'order_type', label: 'Order Type', width: '5%', align: 'left' },
+        { field: 'short_name', label: 'Orderer', width: '5%', align: 'left' },
+        { field: 'orgp_id_1', label: 'Accountee', width: '5%', align: 'left' },
+        { field: 'orgp_id_2', label: 'Consignee', width: '5%', align: 'left' },
+        { field: 'orgp_id_5', label: 'Original Buyer', width: '5%', align: 'left' },
+        { field: 'orgserpo_id_2', label: 'Final Dest', width: '5%', align: 'left' },
+        { field: 'customer_po_number', label: 'Customer Po Number', width: '5%', align: 'left' },
+        { field: 'customer_request_date', label: 'Customer Req. Date', width: '5%', align: 'left' },
+        { field: 'transport_mode', label: 'T.Mode', width: '5%', align: 'left' },
+        { field: 'order_priority', label: 'Order Priority', width: '5%', align: 'left' },
+        { field: 'reference_1', label: 'MECA#', width: '5%', align: 'left' },
+        { field: 'status', label: 'Status', width: '5%', align: 'left' },
+        { field: 'gtm_status', label: 'GTM Status', width: '5%', align: 'left' },
+        { field: 'gtm_status_date', label: 'GTM Status Date', width: '5%', align: 'left' }
     ];
 
     $scope.sortConfig = {
@@ -18,17 +31,21 @@ angular.module('panasonicApp').controller('orgSummaryScreenController', function
         direction: ''
     };
 
-    // Load all organizations
+    // Load all SAles order
     $scope.refreshData = function () {
         $scope.loading = true;
-        $http.get('/api/organization/listAll').then(function (response) {
-            $scope.orgList = response.data;
-            $scope.loadPageRecords();
-            $scope.loading = false;
-        }, function (error) {
-            alert(error.data.message);
-            $scope.loading = false;
-        });
+        $scope.salesOrders = [];
+
+        $http.get("/api/so/listAll/" + UserService.getOrgName()) // replace with your endpoint
+            .then(function (response) {
+                console.log("Sales Orders:", response.data);
+                $scope.salesOrders = response.data;
+                $scope.loadPageRecords();
+                $scope.loading = false;
+            }, function (error) {
+                alert("Error fetching sales orders", error);
+            });
+
     };
 
     $scope.refreshData(); // Initial load
@@ -49,7 +66,7 @@ angular.module('panasonicApp').controller('orgSummaryScreenController', function
     };
 
     $scope.loadPageRecords = function () {
-        let filteredList = $scope.orgList.filter($scope.filterByColumns);
+        let filteredList = $scope.salesOrders.filter($scope.filterByColumns);
 
         // Apply current sort before paginating:
         if ($scope.sortConfig.column) {
@@ -61,7 +78,7 @@ angular.module('panasonicApp').controller('orgSummaryScreenController', function
                 return 0;
             });
         }
-    
+
         $scope.totalRecords = filteredList.length;
         $scope.totalPages = Math.ceil(filteredList.length / $scope.pageSize);
         if ($scope.currentPage > $scope.totalPages) {
@@ -128,7 +145,7 @@ angular.module('panasonicApp').controller('orgSummaryScreenController', function
         $scope.refreshData();
     };
 
-    $scope.onEnterFilter = function(event) {
+    $scope.onEnterFilter = function (event) {
         if (event.which === 13) {  // Enter key
             $scope.currentPage = 1;
             $scope.loadPageRecords();

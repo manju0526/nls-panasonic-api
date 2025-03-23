@@ -1,4 +1,4 @@
-angular.module('panasonicApp').controller('DashboardController', [
+angular.module('panasonicApp').controller('WelcomeController', [
     '$scope', '$rootScope', '$location', '$timeout', '$http', 'UserService', 'AuthService',
     function ($scope, $rootScope, $location, $timeout, $http, UserService, AuthService) {
         console.log("ChangeOrgController loaded");
@@ -13,38 +13,38 @@ angular.module('panasonicApp').controller('DashboardController', [
             {
                 name: "EVA Server", link: "#/eva", submenu: [
                     { name: "Organization", link: "/app/views/Organization/orgSummaryScreen.html" },
-                    { name: "Reports", link: "#/webtop/reports" },
-                    { name: "Settings", link: "#/webtop/settings" }
+                    { name: "Reports", link: "#" },
+                    { name: "Settings", link: "#" }
                 ]
             },
             {
                 name: "OMS", link: "#/oms", submenu: [
-                    { name: "Sales Order", link: "#/webtop/dashboard" },
-                    { name: "Purchase order", link: "#/webtop/reports" },
-                    { name: "Packing List", link: "#/webtop/settings" }
+                    { name: "Sales Order", link: "/app/views/oms/SOsummary.html" },
+                    { name: "Purchase order", link: "#" },
+                    { name: "Packing List", link: "#" }
                 ]
             },
             {
                 name: "Shipment", link: "#/shipment", submenu: [
-                    { name: "Dashboard", link: "#/webtop/dashboard" },
-                    { name: "Reports", link: "#/webtop/reports" },
-                    { name: "Settings", link: "#/webtop/settings" }
+                    { name: "Dashboard", link: "#" },
+                    { name: "Reports", link: "#" },
+                    { name: "Settings", link: "#" }
                 ]
             },
             {
                 name: "Finance", link: "#/finance", submenu: [
-                    { name: "Dashboard", link: "#/webtop/dashboard" },
-                    { name: "Reports", link: "#/webtop/reports" },
-                    { name: "Settings", link: "#/webtop/settings" }
+                    { name: "Dashboard", link: "#" },
+                    { name: "Reports", link: "#" },
+                    { name: "Settings", link: "#" }
                 ]
             },
             {
                 name: "WebTop",
                 link: "#/webtop",
                 submenu: [
-                    { name: "Dashboard", link: "#/webtop/dashboard" },
+                    { name: "Dashboard", link: "#" },
                     { name: "Change Organization", link : "/app/views/changeOrganization.html"   },
-                    { name: "Settings", link: "/app/views/EditToolbar.html" }
+                    { name: "Settings", link: "#" }
                 ]
             }
         ];
@@ -109,9 +109,11 @@ angular.module('panasonicApp').controller('DashboardController', [
         };
 
         $scope.logout = function () {
+            $scope.loading=true;
             sessionStorage.clear();
             AuthService.logout();
             window.location.href = '/login';
+            $scope.loading=false;
         };
 
         // ✅ Unified Footer Update Function
