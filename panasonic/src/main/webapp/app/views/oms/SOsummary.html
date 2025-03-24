@@ -17,94 +17,88 @@
     </div>
 
     <form name="theform" ng-show="!loading">
-        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+        <table width="95%" align="center" class="TABLEBORDER" border="0" cellpadding="0" cellspacing="0">
             <tr class="TITLE">
                 <td align="left" valign="center">
                     &nbsp;&nbsp;<img class="outline" id="id1" ng-src="{{collapseIcon}}" alt="Simple Search"
                         style="cursor: pointer;" ng-click="clickHandler($event)">
                     <b>Sales Orders</b>
-                </td>
-                <td align="right" valign="top">
                     <a href="javascript:window.close()">
                         <img src="../../../assets/images/search.gif" alt="Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </a>
                 </td>
             </tr>
         </table>
-        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
-            <tr id="id1z" style="display: none;">
-                <td align="center" class="SEARCHBAR" width="6%">&nbsp;</td>
-                <td align="left" class="SEARCHBAR" width="6%">
+        <table width="95%" align="center" class="TABLEBORDER" border="0" cellpadding="0" cellspacing="0">
+            <tr  class="sub1" id="id1z" style="display: none;">
+                <td align="center" width="0%" class="SEARCHBAR">&nbsp;</td>
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_id" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
-                    <input type="text" ng-model="search_extSysRefDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
+                <td align="left" width="0%" class="SEARCHBAR">
+                    <input type="text" ng-model="search_orgcurId" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_receivedDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_transType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_tradeType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orderType" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orgpId" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orgpId1" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orgpId3" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orgpId5" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_orgserpoId2" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_customerPoNumber" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_customerRequestDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_transportMode" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_orderPriority" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_reference1" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
-                </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                </td> 
+                <td align="left" width="0%" class="SEARCHBAR" >
                     <input type="text" ng-model="search_status" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_gtmStatus" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="left" class="SEARCHBAR" width="6%">
+                <td align="left" width="0%" class="SEARCHBAR">
                     <input type="text" ng-model="search_gtmStatusDate" ng-keypress="onEnterFilter($event)" size="15" class="B" maxlength="15">
                 </td>
-                <td align="center" class="SEARCHBAR" width="6%"></td>
+                <td align="center" width="2%" class="SEARCHBAR"></td>
             </tr>
-        </table>
-        
-        <table width="95%" align="center" class="TABLEBORDER" cellpadding="0" cellspacing="0">
+  
             <tr class="LISTHEAD">
                 <td align="center" width="2%" class="COLHEAD"></td>
-                <td ng-repeat="col in columns" align="{{col.align}}" width="{{col.width}}">
-                    <a href="javascript:void(0)" ng-click="sortBy(col.field)" style="text-decoration: underline;">
-                        {{col.label}}
-                    </a>
-                    <img ng-if="getSortIcon(col.field)" ng-src="{{getSortIcon(col.field)}}" alt="sort">
+                <td ng-repeat="so in columns" align="{{so.align}}" width="{{so.width}}">
+                    <a href="javascript:void(0)" ng-click="sortBy(so.field)" style="text-decoration: underline;">{{so.label}}</a>
+                    <img ng-if="getSortIcon(so.field)" ng-src="{{getSortIcon(so.field)}}">
                 </td>
-                 <td align="center" width="5%">&nbsp;</td> 
+                 <td align="center" class="COLHEAD" width="8%">&nbsp;</td> 
             </tr>
 
             <!-- Dynamic row rendering -->
@@ -143,18 +137,20 @@
                 <td>{{ so.gtmStatusDate }}</td>
 
                  <td align="center" nowrap>
-                    <a href="#">
+                    <a href="javascript:void(0)" ng-click="edit()">
                         <img src="/assets/images/edit.gif" border="0" alt="Edit">
                     </a>
                 </td> 
             </tr>
             <tr>
-                <td colspan="6">
-                    <table width="90%">
+                <td colspan="18">
+                    <table width="100%">
                         <tr>
-                            <td width="50%" align="left">
+                            <td align="left">
                                 &nbsp;&nbsp;
-                                <font size="2" color="black"><b>&nbsp;&lt;&lt;&nbsp;</b></font>
+                                <a href="javascript:void(0)" ng-click="pgSelect(currentPage-1)">
+                                    <font size="2" color="blue"><b>&nbsp;&lt;&lt;&nbsp;</b></font>
+                                </a>
                                 &nbsp;&nbsp;
                                 <span ng-repeat="n in [].constructor(totalPages) track by $index">
                                     <span ng-if="$index+1 === currentPage">

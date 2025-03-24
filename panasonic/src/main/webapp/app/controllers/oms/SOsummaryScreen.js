@@ -5,25 +5,25 @@ angular.module('panasonicApp').controller('SOSummaryScreenController', function 
     $scope.totalRecords = 0;
     $scope.loading = false;
     $scope.columns = [
-        { field: 'id', label: 'SO#', width: '5%', align: 'left' },
-        { field: 'ext_sys_ref_no', label: 'PC Order#', width: '5%', align: 'left' },
-        { field: 'received_date', label: 'Receive Date', width: '5%', align: 'left' },
-        { field: 'trans_type', label: 'Product Type', width: '5%', align: 'left' },
-        { field: 'trade_type', label: 'Trade Type', width: '5%', align: 'left' },
-        { field: 'order_type', label: 'Order Type', width: '5%', align: 'left' },
-        { field: 'short_name', label: 'Orderer', width: '5%', align: 'left' },
-        { field: 'orgp_id_1', label: 'Accountee', width: '5%', align: 'left' },
-        { field: 'orgp_id_2', label: 'Consignee', width: '5%', align: 'left' },
-        { field: 'orgp_id_5', label: 'Original Buyer', width: '5%', align: 'left' },
-        { field: 'orgserpo_id_2', label: 'Final Dest', width: '5%', align: 'left' },
-        { field: 'customer_po_number', label: 'Customer Po Number', width: '5%', align: 'left' },
-        { field: 'customer_request_date', label: 'Customer Req. Date', width: '5%', align: 'left' },
-        { field: 'transport_mode', label: 'T.Mode', width: '5%', align: 'left' },
-        { field: 'order_priority', label: 'Order Priority', width: '5%', align: 'left' },
-        { field: 'reference_1', label: 'MECA#', width: '5%', align: 'left' },
-        { field: 'status', label: 'Status', width: '5%', align: 'left' },
-        { field: 'gtm_status', label: 'GTM Status', width: '5%', align: 'left' },
-        { field: 'gtm_status_date', label: 'GTM Status Date', width: '5%', align: 'left' }
+        { field: 'id', label: 'SO#', width: '0%', align: 'left' },
+        { field: 'orgcur_id', label: 'PC Order#', width: '0%', align: 'left' },
+        { field: 'received_date', label: 'Receive Date', width: '0%', align: 'left' },
+        { field: 'trans_type', label: 'Product Type', width: '0%', align: 'left' },
+        { field: 'trade_type', label: 'Trade Type', width: '0%', align: 'left' },
+        { field: 'order_type', label: 'Order Type', width: '0%', align: 'left' },
+        { field: 'short_name', label: 'Orderer', width: '0%', align: 'left' },
+        { field: 'orgp_id_1', label: 'Accountee', width: '0%', align: 'left' },
+        { field: 'orgp_id_2', label: 'Consignee', width: '0%', align: 'left' },
+        { field: 'orgp_id_5', label: 'Original Buyer', width: '0%', align: 'left' },
+        { field: 'orgserpo_id_2', label: 'Final Dest', width: '0%', align: 'left' },
+        { field: 'customer_po_number', label: 'Customer Po Number', width: '0%', align: 'left' },
+        { field: 'customer_request_date', label: 'Customer Req. Date', width: '0%', align: 'left' },
+        { field: 'transport_mode', label: 'T.Mode', width: '0%', align: 'left' },
+        { field: 'order_priority', label: 'Order Priority', width: '0%', align: 'left' },
+        { field: 'reference_1', label: 'MECA#', width: '0%', align: 'left' },
+        { field: 'status', label: 'Status', width: '0%', align: 'left' },
+        { field: 'gtm_status', label: 'GTM Status', width: '0%', align: 'left' },
+        { field: 'gtm_status_date', label: 'GTM Status Date', width: '0%', align: 'left' }
     ];
 
     $scope.sortConfig = {
@@ -58,11 +58,26 @@ angular.module('panasonicApp').controller('SOSummaryScreenController', function 
         return regex.test(value);
     }
 
-    $scope.filterByColumns = function (org) {
-        return matchWithWildcard($scope.search_id, org.orgId) &&
-            matchWithWildcard($scope.search_org, org.name) &&
-            matchWithWildcard($scope.search_group, org.orggpId) &&
-            matchWithWildcard($scope.search_status, org.status);
+    $scope.filterByColumns = function (so) {
+        return matchWithWildcard($scope.search_id, so.salesOrderId.id) &&
+        matchWithWildcard($scope.search_orgcurId, so.orgcurId) &&
+        matchWithWildcard($scope.search_receivedDate, so.receivedDate) &&
+        matchWithWildcard($scope.search_transType, so.transType) &&
+        matchWithWildcard($scope.search_tradeType, so.tradeType) &&
+        matchWithWildcard($scope.search_orderType, so.orderType) &&
+        matchWithWildcard($scope.search_shortName, so.orgpId) &&
+        matchWithWildcard($scope.search_orgpId1, so.orgpId1) &&
+        matchWithWildcard($scope.search_orgpId2, so.orgpId2) &&
+        matchWithWildcard($scope.search_orgpId5, so.orgpId5) &&
+        matchWithWildcard($scope.search_orgSerpoId2, so.orgserpoId2) &&
+        matchWithWildcard($scope.search_customerPoNumber, so.customerPoNumber) &&
+        matchWithWildcard($scope.search_customerRequestDate, so.customerRequestDate) &&
+        matchWithWildcard($scope.search_transportMode, so.transportMode) &&
+        matchWithWildcard($scope.search_orderPriority, so.orderPriority) &&
+        matchWithWildcard($scope.search_reference1, so.reference1) &&
+        matchWithWildcard($scope.search_status, so.status) &&
+        matchWithWildcard($scope.search_gtmStatus, so.gtmStatus) &&
+        matchWithWildcard($scope.search_gtmStatusDate, so.gtmStatusDate);
     };
 
     $scope.loadPageRecords = function () {
@@ -103,7 +118,7 @@ angular.module('panasonicApp').controller('SOSummaryScreenController', function 
             $scope.sortConfig.column = column;
             $scope.sortConfig.direction = 'ASC';
         }
-        $scope.orgList.sort((a, b) => {
+        $scope.salesOrders.sort((a, b) => {
             let valA = (a[column] || '').toString().toLowerCase();
             let valB = (b[column] || '').toString().toLowerCase();
             if (valA < valB) return ($scope.sortConfig.direction === 'ASC') ? -1 : 1;
@@ -129,6 +144,7 @@ angular.module('panasonicApp').controller('SOSummaryScreenController', function 
             $scope.isCollapsed = !$scope.isCollapsed;
             $scope.collapseIcon = $scope.isCollapsed ? "/assets/images/expand.gif" : "/assets/images/collapse.gif";
             const targetId = el.id + "z";
+            console.log("Target ID:", targetId);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
                 targetElement.style.display = $scope.isCollapsed ? 'none' : '';
@@ -151,5 +167,9 @@ angular.module('panasonicApp').controller('SOSummaryScreenController', function 
             $scope.loadPageRecords();
         }
     };
+
+    $scope.edit = function () {
+        $rootScope.currentView = '/app/views/oms/SOEditScreen.html';
+    }
 
 });

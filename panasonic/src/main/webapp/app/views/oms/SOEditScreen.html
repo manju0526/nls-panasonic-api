@@ -1,0 +1,166 @@
+<head>
+    <link rel="stylesheet" href="../../../assets/css/styleAll.css">
+</head>
+
+<div ng-controller="SOEditScreenController">
+    <div>
+        <div class="editToolbar">
+            <img src="../../../assets/images/home.gif" ng-click="goHome()" title="Home">
+            <img src="../../../assets/images/qry.jpg" ng-click="openQuery()" title="Query">
+        </div>
+    </div>
+
+    <form name="fbslesOrder">
+
+        <!-- Child tabs starts -->
+        <div style="align-content: left;">
+            <table style="border: 0;" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabForegroundColorid704112siteid0">&nbsp;&nbsp; <span
+                                        class="TabForegroundTextid704112siteid0">Order
+                                        Header</span></a>&nbsp;&nbsp;&nbsp;</td>
+                                <td style="align-content: right;" class="RightTabForeCurveid704112siteid0" nowrap="">
+                                    &nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Order
+                                            Summary</span></a>&nbsp;&nbsp;&nbsp;</td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Customer
+                                            Detail</span></a>&nbsp;&nbsp;</td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">First
+                                            Comment</span></a>&nbsp;&nbsp;</td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Last Comment</span></a>&nbsp;&nbsp;
+                                </td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Case Mark</span></a>&nbsp;&nbsp;
+                                </td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Payment
+                                            Remarks</span></a>&nbsp;&nbsp;</td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Adjustment</span></a>&nbsp;&nbsp;
+                                </td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="LeftTabBgSlantid704112siteid0" valign="top"
+                                    style="align-content: left; width: 10; height: 10; " nowrap="">&nbsp;</td>
+                                <td valign="middle" nowrap class="TabBackgroundColorid704112siteid0"><a href="#"><span
+                                            class="TabBackgroundTextid704112siteid0">Item Summary</span></a>&nbsp;&nbsp;
+                                </td>
+                                <td style="align-content: right; width: 8;" class="RightTabBgCurveid704112siteid0"
+                                    nowrap="">&nbsp;&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <table style="border: 0; height: 100%; width: 100%;" cellpadding="0" cellspacing="0"
+                        class="TabForegroundColorid704112siteid0">
+                        <tr>
+                            <td class="TabForegroundColorid704112siteid0" style="height: 1px;"></td>
+                        </tr>
+                    </table>
+
+                </tr>
+            </table>
+        </div><br>
+        <!-- Child tabs End -->
+
+        <!-- Screen Level start -->
+         <table style="width: 90%; border: 0; align-content: right;" cellspacing="0" cellpadding="0">
+            <tr>
+                <td style="text-align: right;" >
+                    <a href="javascript:void(0)" ng-click="copy()" class="NAVIGATION-BTN" style="text-decoration: none;"><span size="2" >copy&nbsp;</span>&nbsp;</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0)" ng-click="processSO()" class="NAVIGATION-BTN" style="text-decoration: none;"><span size="2" >processSO&nbsp;</span>&nbsp;</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0)" ng-click="confirmRevision()" class="NAVIGATION-BTN" style="text-decoration: none;"><span size="2" >confirm revision&nbsp;</span>&nbsp;</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0)" ng-click="cancel()" class="NAVIGATION-BTN" style="text-decoration: none;"><span size="2" >Cancel&nbsp;</span>&nbsp;</a>&nbsp;
+                </td>
+            </tr>
+         </table>
+        <!-- Screen Level End -->
+
+    </form>
+
+</div>
