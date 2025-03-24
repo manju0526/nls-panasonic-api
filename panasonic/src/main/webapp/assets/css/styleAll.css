@@ -295,7 +295,7 @@ A:hover {
 
 .RightCurve {
     Background-Attachment: scroll;
-    Background-Image: url(/NLS/images/FFFFFFr.gif);
+    Background-Image: url(../images/FFFFFFr.gif);
     Background-Position: right top;
     Background-Repeat: no-repeat;
 }
@@ -303,7 +303,7 @@ A:hover {
 .LeftSubTabid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #336699;
-    Background-Image: url(/NLS/images/FFFFFFsl.gif);
+    Background-Image: url(../images/FFFFFFsl.gif);
     Background-Position: left top;
     Background-Repeat: no-repeat;
 }
@@ -311,7 +311,7 @@ A:hover {
 .LeftTabBgSlantid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #CCCC99;
-    Background-Image: url(/NLS/images/FFFFFFtl.gif);
+    Background-Image: url(../images/FFFFFFtl.gif);
     Background-Position: left top;
     Background-Repeat: no-repeat;
 }
@@ -319,7 +319,7 @@ A:hover {
 .LeftTabForeSlantid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #336699;
-    Background-Image: url(/NLS/images/FFFFFFtl.gif);
+    Background-Image: url(../images/FFFFFFtl.gif);
     Background-Position: left top;
     Background-Repeat: no-repeat;
 }
@@ -327,14 +327,14 @@ A:hover {
 .RightSubTabid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #336699;
-    Background-Image: url(/NLS/images/FFFFFFsr.gif);
+    Background-Image: url(../images/FFFFFFsr.gif);
     Background-Position: right top;
 }
 
 .RightTabBgCurveid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #CCCC99;
-    Background-Image: url(/NLS/images/FFFFFFtr.gif);
+    Background-Image: url(../images/FFFFFFtr.gif);
     Background-Position: right top;
     Background-Repeat: no-repeat;
 }
@@ -342,7 +342,7 @@ A:hover {
 .RightTabForeCurveid704112siteid0 {
     Background-Attachment: scroll;
     Background-Color: #336699;
-    Background-Image: url(/NLS/images/FFFFFFtr.gif);
+    Background-Image: url(../images/FFFFFFtr.gif);
     Background-Position: right top;
     Background-Repeat: no-repeat;
 }
